@@ -1,0 +1,13 @@
+UF uf1(int i, double x, double[3] B) (double u):
+	begin 
+	u=1;
+	end UF uf1
+	
+	
+Mechanism m1(double[3] B) (int winner, double price):
+	begin
+	winner = 1;
+	price = 1;
+	end Mechanism m1
+	
+
