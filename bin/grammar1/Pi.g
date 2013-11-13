@@ -15,6 +15,7 @@ options {
   import statement.*;
   import annotation.*;
   import parameter.*;
+  import functionCall.*;
 }
 @lexer::header {
   package grammar1;
@@ -55,6 +56,8 @@ statement returns [statement statement]:
             $statement = $ifStatement.ifStatement; 
           }
         )
+        | whileStatement
+          { $statement = $whileStatement.whileStatement; }
         | forStatement 
           { $statement = $forStatement.forStatement; }
         | returnStatement 
@@ -106,11 +109,22 @@ assignStatement returns [assignStatement assignStatement]:
         op2 = expr { $assignStatement.assignment = $op2.expr; }
         ';'
         ;
+whileStatement returns [whileStatement whileStatement]:
+        { $whileStatement = new whileStatement(); ArrayList<statement> body = new ArrayList<statement>(); }
+        WHILE (loopInvariant { $whileStatement.invariant = $loopInvariant.loopInvariant; })?
+        '(' expr 
+            { $whileStatement.guard = $expr.expr; }
+        ')' 
+        '{' 
+          (statement { body.add($statement.statement); })+
+        '}' 
+        { $whileStatement.body = body; }
+        ;
 forStatement returns [forStatement forStatement]:
         { $forStatement = new forStatement(); }
         FOR (loopInvariant { $forStatement.invariant = $loopInvariant.loopInvariant; })?
         '(' 
-          INT op1=ID '=' op3=expr { $forStatement.iterator = $op1.text; $forStatement.begin = $op3.expr; }
+          (INT)? op1=ID '=' op3=expr { $forStatement.iterator = $op1.text; $forStatement.begin = $op3.expr; }
           ';'
           op4=expr { $forStatement.guard = $op4.expr; } 
           ';' 
@@ -123,12 +137,22 @@ forStatement returns [forStatement forStatement]:
 ifStatement returns [ifStatement ifStatement]:
        { $ifStatement = new ifStatement(); }
        IF '(' op1 = expr { $ifStatement.conditions.add($op1.expr); }')' 
-       '{' (op3 = statement { $ifStatement.exe.add($op3.statement); })+ '}'
-       (ELIF '(' op2=expr { $ifStatement.conditions.add($op2.expr);} ')' 
-       '{'
-       (op4=statement { $ifStatement.exe.add($op4.statement); } )+
+       '{' 
+       { ArrayList<statement> temp = new ArrayList<statement>(); }
+       (op3 = statement  { temp.add($op3.statement); })+ 
+       { $ifStatement.exe.add(temp); }
+       '}'
+       
+       (ELIF '(' op2=expr { $ifStatement.conditions.add($op2.expr); } ')' 
+       '{' {  temp = new ArrayList<statement>(); }
+       (op4=statement { temp.add($op4.statement); } )+
+       { $ifStatement.exe.add(temp); }
        '}')*
-       (ELSE '{' ( op5=statement  { $ifStatement.exe.add($op5.statement); } )+ '}')?
+       (ELSE '{' {  temp = new ArrayList<statement>(); }
+       ( op5=statement  { temp.add($op5.statement); } )+ '}'
+       { $ifStatement.exe.add(temp); }
+       )?
+       
        ;
        
 returnStatement returns [returnStatement returnStatement]:
@@ -144,15 +168,16 @@ expr returns [expression expr]:
       op1=negation 
       ( 
         (
-        '&&' op2=negation { noleaf = false; operator = "&&";}
+        '&&' op2=negation { noleaf = true; operator = "&&";}
         | 
-        '||' op2=negation { noleaf = false; operator = "||";}
+        '||' op2=negation { noleaf = true; operator = "||";}
         )
        {  if(first){
             temp = new expression();
             temp.l = $op1.negation;
             temp.r = $op2.negation;
             temp.op= operator;
+            first = false;
           }
           else{
               temp1 = temp;
@@ -175,7 +200,7 @@ negation returns [expression negation]:
       { boolean noleaf = false; String operator = "";  }
       (op1 = relation 
       |
-      '~' op2 = relation { noleaf = false; operator = "~";}
+      '~' op2 = relation { noleaf = true; operator = "~";}
       )
       { if(!noleaf)
             $negation = $op1.relation;
@@ -191,12 +216,12 @@ relation returns [expression relation]:
       { boolean noleaf = false; String operator = "";  }
       op1=add 
       (
-      '>' op2=add { noleaf = false; operator = ">";}
-      |'<' op2=add { noleaf = false; operator = "<";}
-      |'>=' op2=add { noleaf = false; operator = ">=";}
-      |'<=' op2=add { noleaf = false; operator = "<=";}
-      |'!=' op2=add { noleaf = false; operator = "!=";}
-      |'==' op2=add { noleaf = false; operator = "==";}
+      '>' op2=add { noleaf = true; operator = ">";}
+      |'<' op2=add { noleaf = true; operator = "<";}
+      |'>=' op2=add { noleaf = true; operator = ">=";}
+      |'<=' op2=add { noleaf = true; operator = "<=";}
+      |'!=' op2=add { noleaf = true; operator = "!=";}
+      |'==' op2=add { noleaf = true; operator = "==";}
       )?
       { if(!noleaf)
             $relation = $op1.add;
@@ -214,15 +239,16 @@ add returns [expression add]:
       op1=mult 
       ( 
         (
-        '+' op2=mult { noleaf = false; operator = "+";}
+        '+' op2=mult { noleaf = true; operator = "+";}
         | 
-        '-' op2=mult { noleaf = false; operator = "-";}
+        '-' op2=mult { noleaf = true; operator = "-";}
         )
        {  if(first){
             temp = new expression();
             temp.l = $op1.mult;
             temp.r = $op2.mult;
             temp.op= operator;
+            first = false;
           }
           else{
               temp1 = temp;
@@ -246,15 +272,16 @@ mult returns [expression mult]:
       op1=unary 
       ( 
         (
-        '*' op2=unary { noleaf = false; operator = "*";}
+        '*' op2=unary { noleaf = true; operator = "*";}
         | 
-        '/' op2=unary { noleaf = false; operator = "/";}
+        '/' op2=unary { noleaf = true; operator = "/";}
         )
        {  if(first){
             temp = new expression(); 
             temp.l = $op1.unary;
             temp.r = $op2.unary;
             temp.op= operator;
+            first = false;
           }
           else{
               temp1 = temp;
@@ -302,33 +329,70 @@ term returns [term term]:
           else{
             $term = new arrayElement(name, index);
           }
-        }  
+        } 
+      | 
+      LENGTH 
+      '(' ID  
+      { String name = $ID.text; boolean isArrayElement=false; ArrayList<expression> index = null;} 
+        ('[' op1 = expr ']'
+          { if(!isArrayElement){
+              isArrayElement = true;
+              index = new ArrayList<expression>();
+             }
+             index.add($op1.expr);
+          }
+        )*
+      ')' 
+       {  
+         ArrayList<expression> inputs = new ArrayList<expression>();
+        { if(!isArrayElement)
+            inputs.add(new expression(new string(name)));
+          else
+            inputs.add(new expression(new arrayElement(name, index)));
+        } 
+        arrayOperation length = new arrayOperation("length");
+        length.inputs = inputs;
+        length.a_inputs = null;
+        $term = new functionCallT(length);
+      }
+      | ID { ud_FunctionCall call = new ud_FunctionCall($ID.text); }
+      '(' (op1 = expr { ArrayList<expression> inputs = new ArrayList<expression>(); inputs.add($op1.expr); }
+       (',' op2 = expr { inputs.add($op2.expr); })* 
+       { call.inputs = inputs; }
+       )? ')'
+       { $term = new functionCallT(call); }
       ;
 inputs returns [ArrayList<parameter> inputs]: 
       { $inputs = new ArrayList<parameter>(); parameter toadd = null; }
       op1=type  op2=ID { toadd = new parameter($op1.type, $op1.dimension, $op2.text); $inputs.add(toadd); }
       (',' op3=type op4=ID {  toadd = new parameter($op3.type, $op3.dimension, $op4.text); $inputs.add(toadd); } )*
-     
       ;
 type returns [String type, int dimension]: 
-      { $dimension = 0; }
-      INT { $type = "int"; } ('[' ']' { $type = "array"; $dimension = $dimension+1; })?
-      | DOUBLE { $type = "double"; } ('[' ']' { $type = "array"; $dimension = $dimension+1;} )?
-      | BOOLEAN { $type = "boolean"; }
+      { int dimension = 0; }
+      (
+      INT { $type = "int"; } ('[' ']' { $type = "array"; dimension = dimension+1; })* 
+      |
+       DOUBLE { $type = "double"; } ('[' ']' { $type = "array"; dimension = dimension+1; } )*
+      |
+       BOOLEAN { $type = "boolean"; }
+      |
+       VOID { $type = "void"; }
+      )
+      { $dimension = dimension; }
       ;
       
 preFunAnnotation returns [preFunAnnotation preFunAnnotation]:
-          '@' PRE ':' a_Expr '@'{ $preFunAnnotation = new preFunAnnotation($a_Expr.a_Expr);}
+          '@' PRE ':' a_Expr { $preFunAnnotation = new preFunAnnotation($a_Expr.a_Expr);}
           ;
 postFunAnnotation returns [postFunAnnotation postFunAnnotation]:
-          '@' POST ':' a_Expr '@' { $postFunAnnotation = new postFunAnnotation($a_Expr.a_Expr);}
+          '@' POST ':' a_Expr { $postFunAnnotation = new postFunAnnotation($a_Expr.a_Expr);}
           ;
 loopInvariant returns [loopInvariant loopInvariant]:
-          '@' L ':' a_Expr '@' { $loopInvariant = new loopInvariant($a_Expr.a_Expr);}
+          '@' L ':' a_Expr { $loopInvariant = new loopInvariant($a_Expr.a_Expr);}
           ;
 inContextAnnotation returns [inContextAnnotation inContextAnnotation]:
-          '@' ( ASSERT  | ASSUME )
-          ':' a_Expr '@' { $inContextAnnotation = new inContextAnnotation($a_Expr.a_Expr);}
+          '@' ASSERT 
+          ':' a_Expr  { $inContextAnnotation = new inContextAnnotation($a_Expr.a_Expr);}
           ;
           
 quantifier returns [quantifier quantifier]:
@@ -338,29 +402,42 @@ quantifier returns [quantifier quantifier]:
          ;
          
 a_Expr returns [a_expression a_Expr]: 
-        { boolean noleaf = false; ArrayList<quantifier> qs= new ArrayList<quantifier>(); String operator = "";  }
-        (quantifier { qs.add($quantifier.quantifier);})* 
-        op1=a_negation 
-        ( AND op2=a_negation { noleaf = true; operator = "and";  }
-        |
-        OR op2=a_negation { noleaf = true; operator = "or";  }
-        |
-        IMPLIES op2=a_negation{ noleaf = true; operator = "=>";  }
-        |
-        EQUIV op2=a_negation { noleaf = true; operator = "<=>";  }
-        )?
-        { if(!noleaf){
-            $a_Expr = $op1.a_negation;
-            $a_Expr.q = qs;
-            }
-          else{
-            $a_Expr = new a_expression(); 
-            $a_Expr.l = $op1.a_negation;
-            $a_Expr.r = $op2.a_negation;
-            $a_Expr.op= operator;
-            $a_Expr.q = qs;
+       { ArrayList<quantifier> qs = new ArrayList<quantifier>(); }
+       ( quantifier { qs.add($quantifier.quantifier); })*
+      { a_expression temp= null; a_expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  }
+      op1=a_negation 
+      ( 
+        (
+        AND op2=a_negation { noleaf = true; operator = "and";}
+        | 
+        OR op2=a_negation { noleaf = true; operator = "or";}
+        | 
+        IMPLIES op2=a_negation { noleaf = true; operator = "=>";}
+        | 
+        EQUIV op2=a_negation { noleaf = true; operator = "<=>";}
+        )
+       {  if(first){
+            temp = new a_expression();
+            temp.l = $op1.a_negation;
+            temp.r = $op2.a_negation;
+            temp.op= operator;
+            first = false;
           }
-       }
+          else{
+              temp1 = temp;
+              temp = new a_expression();
+              temp.l = temp1;
+              temp.op = operator;
+              temp.r = $op2.a_negation;
+          }
+      }
+      )*
+      { if(first && !noleaf){
+          $a_Expr = $op1.a_negation;
+        } 
+        else
+          $a_Expr = temp;
+      }
       ;
     
 a_negation returns [a_expression a_negation]: 
@@ -400,15 +477,16 @@ a_add returns [a_expression a_add]:
       op1=a_mult 
       ( 
         (
-        '+' op2=a_mult { noleaf = false; operator = "+";}
+        '+' op2=a_mult { noleaf = true; operator = "+";}
         | 
-        '-' op2=a_mult { noleaf = false; operator = "-";}
+        '-' op2=a_mult { noleaf = true; operator = "-";}
         )
        {  if(first){
             temp = new a_expression();
             temp.l = $op1.a_mult;
             temp.r = $op2.a_mult;
             temp.op= operator;
+            first = false;
           }
           else{
               temp1 = temp;
@@ -431,14 +509,15 @@ a_mult returns [a_expression a_mult]:
       { a_expression temp= null; a_expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  }
       op1=a_unary 
       (
-      '*' op2=a_unary { noleaf = false; operator = "*";}
+      '*' op2=a_unary { noleaf = true; operator = "*";}
       | 
-      '/' op2=a_unary { noleaf = false; operator = "/";}
+      '/' op2=a_unary { noleaf = true; operator = "/";}
       {  if(first){
             temp = new a_expression();
             temp.l = $op1.a_unary;
             temp.r = $op2.a_unary;
             temp.op= operator;
+            first = false;
           }
           else{
               temp1 = temp;
@@ -477,11 +556,57 @@ a_unary returns[a_expression a_unary]:
       
 a_term returns [a_term a_term]:   
         NUMERIC { $a_term = new a_num($NUMERIC.text); }
-      | TRUE { $a_term = new a_bool("true");}
-      | FALSE { $a_term = new a_bool("false");}
-      |'('a_Expr')'{ $a_term = new a_expressionT($a_Expr.a_Expr); }
       | 
-      ID  { String name = $ID.text; boolean isArrayElement=false; ArrayList<a_expression> index = null;} 
+      TRUE { $a_term = new a_bool("true");}
+      | 
+      FALSE { $a_term = new a_bool("false");}
+      |
+      '('a_Expr')'{ $a_term = new a_expressionT($a_Expr.a_Expr); }
+      | 
+      ID  
+      { String name = $ID.text; boolean isArrayElement=false; ArrayList<a_expression> index = null;} 
+        ('[' op1 = a_Expr ']'
+          { if(!isArrayElement){
+              isArrayElement = true;
+              index = new ArrayList<a_expression>();
+              System.out.println("has index");
+             }
+             index.add($op1.a_Expr);
+          }
+        )*
+        { if(!isArrayElement)
+            $a_term = new a_string(name);
+          else
+            $a_term = new a_arrayElement(name, index);
+        }
+      |  
+      '|' ID  
+      { ArrayList<a_expression> inputs = new ArrayList<a_expression>();  String name = $ID.text; boolean isArrayElement=false; ArrayList<a_expression> index = null;} 
+        (
+          '[' op1 = a_Expr ']'
+          { if(!isArrayElement){
+              isArrayElement = true;
+              index = new ArrayList<a_expression>();
+             }
+             index.add($op1.a_Expr);
+          }
+        )*
+      '|'
+       { 
+        { if(!isArrayElement)
+            inputs.add(new a_expression(new a_string(name)));
+          else
+            inputs.add(new a_expression(new a_arrayElement(name, index)));
+        } 
+        arrayOperation length = new arrayOperation("length");
+        length.a_inputs = inputs;
+        length.inputs = null;
+        $a_term = new a_functionCallT(length);
+      }
+      |
+      SORTED { ArrayList<a_expression> inputs = new ArrayList<a_expression>(); }
+      '(' 
+        ID  { String name = $ID.text; boolean isArrayElement=false; ArrayList<a_expression> index = null;} 
         ('[' op1 = a_Expr ']'
           { if(!isArrayElement){
               isArrayElement = true;
@@ -490,26 +615,39 @@ a_term returns [a_term a_term]:
              index.add($op1.a_Expr);
           }
         )*
-        { if(!isArrayElement)
-            $a_term = new a_string(name);
-          else{
-            $a_term = new a_arrayElement(name, index);
-          }
-        }  
+        {
+          if(!isArrayElement)
+            inputs.add(new a_expression(new a_string(name)));
+          else
+            inputs.add(new a_expression(new a_arrayElement(name, index)));
+        } 
+        ',' op3 = a_Expr { inputs.add($op3.a_Expr); }  
+        ',' op4 = a_Expr { inputs.add($op4.a_Expr); } 
+      ')'
+      { 
+        arrayOperation sortedarray= new arrayOperation("sorted"); 
+        sortedarray.inputs = null;
+        sortedarray.a_inputs = inputs;
+        $a_term = new a_functionCallT(sortedarray);
+      }
+      
       ;
       
 RETURN: 'return';       
 INT: 'int';
 DOUBLE: 'double';
+VOID: 'void';
 IF: 'if';
 ELIF: 'elif';
 ELSE: 'else';
 FOR: 'for';
+WHILE: 'while';
 DIV: '/'; 
 BOOLEAN: 'boolean';  
 TRUE: 'true';
 FALSE: 'false'; 
-
+LENGTH: 'length';
+SORTED: 'sorted';
 
 
 PRE: 'pre';

@@ -3,41 +3,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import annotation.*;
-import expression.*;
-import a_expression.*;
 
-public class forStatement extends statement{
-	
-	public String iterator;
-	public expression begin;
-	public expression increment;
+import expression.expression;
+import statement.*;
+
+public class whileStatement extends statement{
 	public expression guard;
 	public ArrayList<statement> body;
-	public annotation invariant;
+	public loopInvariant invariant;
 	public ArrayList<ArrayList<statement>> basicpath;
 	
-	public forStatement(){
-		this.type = "forStatement";
-		this.body = new ArrayList<statement>();
-		this.invariant = null;
+	public whileStatement(){
+		this.type = "whileStatement";
 		this.basicpath = new ArrayList<ArrayList<statement>>();
 	}
-	
 	public ArrayList<ArrayList<statement>> bp(HashMap<String, defFunStatement> functions){
-		assignStatement increment = new assignStatement();
-		increment.name = this.iterator;
-		increment.assignment = this.increment;
-		this.body.add(increment);
-		
 		if(this.invariant!=null){
-			// init + @L
-			defVarStatement iteratorInit = new defVarStatement();
-			iteratorInit.name = this.iterator;
-			iteratorInit.assignment = this.begin; 
-		
+			//@L
 			ArrayList<statement> path = new ArrayList<statement>();
-		
-			path.add(iteratorInit);
 			path.add(new annotationStatement(this.invariant.e, "invariant"));
 			path.add(new cut());
 			this.basicpath.add(path);
@@ -51,13 +34,13 @@ public class forStatement extends statement{
 			ArrayList<ArrayList<statement>> pathlist = null;
 			boolean startAnotherPath = false;
 			boolean hasIf = false;
-						
+			
 			for(int i=0; i<this.body.size(); i++){
-							
+				
 				s=this.body.get(i); 
-							
+				
 				if(s.type.equals("whileStatement")){
-								
+					
 					pathRet = ((whileStatement)s).bp(functions);
 					if(!hasIf){
 						if(!startAnotherPath){
@@ -75,8 +58,8 @@ public class forStatement extends statement{
 							for(int j=0; j<pathRet.size()-1; j++)
 								this.basicpath.add(pathRet.get(j));
 						}
-							path = pathRet.get(pathRet.size()-1); // last one is @l + not guard => out of loop
-							startAnotherPath = false;
+						path = pathRet.get(pathRet.size()-1);
+						startAnotherPath = false;
 					}
 					else{
 						for(int j=0; j<pathlist.size(); j++){
@@ -88,14 +71,14 @@ public class forStatement extends statement{
 						}
 						for(int j=0; j<pathRet.size()-1; j++)
 							this.basicpath.add(pathRet.get(j));
-						pathlist = null;
 						path = pathRet.get(pathRet.size()-1);
 						startAnotherPath = false;
 						hasIf = false;
-					}			
+					}
+					
 				}
 				else if(s.type.equals("forStatement")){
-								
+					
 					pathRet = ((forStatement)s).bp(functions);
 					if(!hasIf){
 						if(!startAnotherPath){
@@ -103,7 +86,7 @@ public class forStatement extends statement{
 								if(j==0){ // add init + loop invariant
 									for(int k=0; k<pathRet.get(j).size(); k++)
 										path.add(pathRet.get(j).get(k));
-										this.basicpath.add(path);
+									this.basicpath.add(path);
 								}
 								else
 									this.basicpath.add(pathRet.get(j));
@@ -126,7 +109,6 @@ public class forStatement extends statement{
 						}
 						for(int j=0; j<pathRet.size()-1; j++)
 							this.basicpath.add(pathRet.get(j));
-						pathlist = null;
 						path = pathRet.get(pathRet.size()-1);
 						startAnotherPath = false;
 						hasIf = false;
@@ -190,33 +172,37 @@ public class forStatement extends statement{
 						}
 						startAnotherPath = false;
 					}
-								
+					
 				}
 				else{
 					System.out.println("statement type is not supported");
 				}
 			}
-				if(!hasIf || pathlist == null)
-					this.basicpath.add(path);
-				else{
-					for(int i=0; i<pathlist.size(); i++)
-						this.basicpath.add(pathlist.get(i));
-				}
-				for(int i=1; i<this.basicpath.size(); i++){
-					if(!this.basicpath.get(i).get(this.basicpath.get(i).size()-1).type.equals("cut")){
-						this.basicpath.get(i).add(new annotationStatement(this.invariant.e, "invariant"));
-						this.basicpath.get(i).add(new cut());
-					}
-				}
-						
-		// @L + not guard = last iteration
-				path = new ArrayList<statement>();
-				path.add(iteratorInit);
-				path.add(new annotationStatement(this.invariant.e, "invariant"));
-				path.add(new assumeStatement(new expression(this.guard, "not")));
+			
+			if(!hasIf || pathlist == null)
 				this.basicpath.add(path);
-						
-		}					
-			return this.basicpath;
+			else{
+				for(int i=0; i<pathlist.size(); i++)
+					this.basicpath.add(pathlist.get(i));
+			}
+			for(int i=1; i<this.basicpath.size(); i++){
+				if(!this.basicpath.get(i).get(this.basicpath.get(i).size()-1).type.equals("cut")){
+					this.basicpath.get(i).add(new annotationStatement(this.invariant.e, "invariant"));
+					this.basicpath.get(i).add(new cut());
+				}
+			}
+			
+			// @L + not guard = last iteration
+			path = new ArrayList<statement>();
+			path.add(new annotationStatement(this.invariant.e, "invariant"));
+			path.add(new assumeStatement(new expression(this.guard, "not")));
+			this.basicpath.add(path);
+			
+		}
+		
+		
+					
+					
+		return this.basicpath;
 	}
 }

@@ -1,0 +1,12 @@
+@ pre : l>=0 and u<=|a|
+@ post:  rv <=> ( exist(i), l<=i  and i<=u and a[i] ==e)
+boolean  linearSearch(int[] a, int l, int u, int e){
+    
+    for @ L : i>=l and (exist(j), (j>=l and j<i) => a[j]!=e )
+		 (int i=l; i<=u; i=i+1) {
+       		if(a[i]==e){
+				return true;
+            }
+         }
+    return false;
+}
