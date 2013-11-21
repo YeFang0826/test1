@@ -397,13 +397,13 @@ inContextAnnotation returns [inContextAnnotation inContextAnnotation]:
           
 quantifier returns [quantifier quantifier]:
          (EXIST { $quantifier = new quantifier("exist"); }| FORALL { $quantifier = new quantifier("forall"); } ) 
-         '(' op1=ID { $quantifier.v.add($op1.text); }
-         (',' op2=ID { $quantifier.v.add($op2.text); } )* ')' ','
+         '(' op1=type  op2=ID { $quantifier.v.add(new parameter($op1.type, $op1.dimension, $op2.text)); }
+         (',' op3=type  op4=ID { $quantifier.v.add(new parameter($op3.type, $op3.dimension, $op4.text)); } )* ')' ','
          ;
          
 a_Expr returns [a_expression a_Expr]: 
        { ArrayList<quantifier> qs = new ArrayList<quantifier>(); }
-       ( quantifier { qs.add($quantifier.quantifier); })*
+       ( quantifier { qs.add($quantifier.quantifier); System.out.println("add quantifier"); })*
       { a_expression temp= null; a_expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  }
       op1=a_negation 
       ( 
@@ -437,6 +437,9 @@ a_Expr returns [a_expression a_Expr]:
         } 
         else
           $a_Expr = temp;
+        
+        if(qs.size()>0)
+          $a_Expr.q = qs;
       }
       ;
     
@@ -604,11 +607,14 @@ a_term returns [a_term a_term]:
         $a_term = new a_functionCallT(length);
       }
       |
-      SORTED { ArrayList<a_expression> inputs = new ArrayList<a_expression>(); }
+      { String method =""; } 
+      ( SORTED   { method = "sorted"; } | PARTITIONED { method = "partitioned"; } )
+      { ArrayList<a_expression> inputs = new ArrayList<a_expression>(); }
       '(' 
         ID  { String name = $ID.text; boolean isArrayElement=false; ArrayList<a_expression> index = null;} 
         ('[' op1 = a_Expr ']'
-          { if(!isArrayElement){
+          { 
+             if(!isArrayElement){
               isArrayElement = true;
               index = new ArrayList<a_expression>();
              }
@@ -621,16 +627,16 @@ a_term returns [a_term a_term]:
           else
             inputs.add(new a_expression(new a_arrayElement(name, index)));
         } 
-        ',' op3 = a_Expr { inputs.add($op3.a_Expr); }  
-        ',' op4 = a_Expr { inputs.add($op4.a_Expr); } 
+        ',' op2 = a_Expr { inputs.add($op2.a_Expr); }  
+        ',' op3 = a_Expr { inputs.add($op3.a_Expr); } 
+        (',' op4 = a_Expr { inputs.add($op4.a_Expr); } ',' op5 = a_Expr { inputs.add($op5.a_Expr); } )?
       ')'
       { 
-        arrayOperation sortedarray= new arrayOperation("sorted"); 
+        arrayOperation sortedarray= new arrayOperation(method); 
         sortedarray.inputs = null;
         sortedarray.a_inputs = inputs;
         $a_term = new a_functionCallT(sortedarray);
       }
-      
       ;
       
 RETURN: 'return';       
@@ -648,7 +654,7 @@ TRUE: 'true';
 FALSE: 'false'; 
 LENGTH: 'length';
 SORTED: 'sorted';
-
+PARTITIONED: 'partitioned';
 
 PRE: 'pre';
 POST: 'post';

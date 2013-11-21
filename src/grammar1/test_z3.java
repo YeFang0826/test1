@@ -10,12 +10,13 @@ import statement.*;
 import org.antlr.runtime.*;
 import a_expression.*;
 import expression.*;
+import com.microsoft.z3.*;
+import parameter.*;
 
-
-public class test {
-	public static void main(String[] args) throws RecognitionException, FileNotFoundException{
+public class test_z3 {
+	public static void main(String[] args) throws RecognitionException, FileNotFoundException, Z3Exception{
 		
-		Scanner sc= new Scanner(new File("src/input_2.txt"));
+		Scanner sc= new Scanner(new File("src/input_4.txt"));
 		String input = "";
 		String temp;
 		
@@ -31,17 +32,7 @@ public class test {
 		PiParser parser = new PiParser(tokenStream);
 		defFunStatement result = parser.program();
 		ArrayList<ArrayList<statement>> bp = result.bp();
-		/***********************************************************
-		for(int i=0;i<bp.size(); i++){
-			System.out.println("BASIC PATH: "+i+":");
-			for(int j=0; j<bp.get(i).size(); j++){
-				if(bp.get(i).get(j).type.equals("annotationStatement"))
-					System.out.println(((annotationStatement)bp.get(i).get(j)).a_type);
-				else
-					System.out.println(bp.get(i).get(j).type);
-			}
-		}
-		***********************************************************/
+		
 		ArrayList<a_expression> bpSet = new ArrayList<a_expression>();
 		a_expression g;
 		a_expression f;
@@ -148,6 +139,33 @@ public class test {
 			else
 				System.out.println("INCOMPLETE PATH");
 		}
-		/***********************************************************/
+	}
+	
+	public void prove(a_expression bp, ArrayList<arrayModification> am, ArrayList<parameter> functionInputs) throws Z3Exception{
+		//+ function inputs
+		HashMap<String, String> cfg = new HashMap<String, String>();
+        cfg.put("proof", "true");
+        Context ctx = new Context(cfg);
+        
+        // define datatype for java integer array
+        ArraySort intArray = ctx.MkArraySort(ctx.IntSort(), ctx.RealSort());
+        TupleSort javaArray = ctx.MkTupleSort(ctx.MkSymbol("javaArray"), new Symbol[] { ctx.MkSymbol("array"), ctx.MkSymbol("bound") },new Sort[] {intArray, ctx.IntSort()} );
+        // hashMap <string, z3Object>
+        HashMap<String,Expr> symbolTable = new HashMap<String, Expr>();
+        parameter p;
+        for(int i=0; i<functionInputs.size(); i++){
+        	p = functionInputs.get(i);
+        	if(p.type.equals("int"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name,ctx.IntSort()));
+        	else if(p.type.equals("array")){
+        		symbolTable.put(p.name, ctx.MkConst(p.name, javaArray));
+        	}
+        	else if(p.type.equals("boolean"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name,ctx.BoolSort()));
+        	else if(p.type.equals("double"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name,ctx.RealSort()));
+        }
+        
+		
 	}
 }

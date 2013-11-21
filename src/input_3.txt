@@ -1,4 +1,4 @@
-@pre: n == |a|
+@pre: true
 @post: sorted(a, 0, |a|-1)
 void selectionSort(int[] a){
  	int i;
@@ -6,11 +6,11 @@ void selectionSort(int[] a){
 	int iMin;
 	int temp;
 
-	for @ L: sorted(a, 0, j) and (j>0 => (forall(k), j<=k and k<=|a|-1 => a[j-1] <=a[k] ))
-	( j=0; j<n-1; j=j+1){
+	for @ L: sorted(a, 0, j) and (j>0 => (forall(int k), j<=k and k<=|a|-1 => a[j-1] <=a[k] ))
+	(j=0; j<length(a)-1; j=j+1){
 		iMin = j;
-		for @L: forall(j), j<=k and k<= i-1 => a[iMin]<=a[k]
-		( i=j+1;  i<n; i=i+1){
+		for @L: forall(int j), j<=k and k<= i-1 => a[iMin]<=a[k]
+		(i=j+1;  i<length(a); i=i+1){
 			if(a[i] < a[iMin]){
 				iMin = i;
 			}
