@@ -1,24 +1,17 @@
-@pre: true
-@post: sorted(a, 0, |a|-1)
-void selectionSort(int[] a){
- 	int i;
-	int j;
-	int iMin;
-	int temp;
+@pre : true
+@post : sorted(rv, 0, |rv|)
+int[] BubbleSort(int[] a){
 
-	for @ L: sorted(a, 0, j) and (j>0 => (forall(int k), j<=k and k<=|a|-1 => a[j-1] <=a[k] ))
-	(j=0; j<length(a)-1; j=j+1){
-		iMin = j;
-		for @L: forall(int j), j<=k and k<= i-1 => a[iMin]<=a[k]
-		(i=j+1;  i<length(a); i=i+1){
-			if(a[i] < a[iMin]){
-				iMin = i;
+     for @ L: i>=-1 and i<=|a| and partitioned(a, 0, i, i+1, |a|) and sorted(a,i,|a|)
+	 (int i=length(a); i>0 ; i=i-1){
+		for @ L:  i>=1 and i<=|a| and j>=0 and j<=i and partitioned(a, 0, i, i+1, |a|) and partitioned(a,0,j-1,j,j) and sorted(a,i,|a|)
+		(int j=0; j<i; j=j+1){
+			if(a[j] > a[j+1]){
+				int t=a[j];
+				a[j] = a[j+1];
+				a[j+1] = t;
 			}
 		}
-		if(iMin != j){
-			temp = a[j];
-			a[j] = a[iMin];
-			a[iMin] = temp;
-		}
-	}
+	 }
+	return a;
 }

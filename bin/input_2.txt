@@ -1,4 +1,4 @@
-@ pre: 0<= l and u<|a| and sorted(a, l, u)
+@ pre: 0<= l and u<=|a| and sorted(a, l, u)
 @ post: rv <=> (exist(int i), l<=i and i<=u and a[i]==e )
 boolean BinarySearch(int[] a, int l, int u, int e){
      if(l>u){

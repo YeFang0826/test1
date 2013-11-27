@@ -1,7 +1,13 @@
 package z3_array;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+
+import parameter.parameter;
+
+import a_expression.a_expression;
+import a_expression.arrayModification;
 
 import com.microsoft.z3.*;
 
@@ -14,59 +20,47 @@ public class java_array {
         Solver s = ctx.MkSolver();
         Goal g = ctx.MkGoal(true, false, false);
         ArraySort array_sort = ctx.MkArraySort(ctx.IntSort(), ctx.RealSort());
-        Expr a = ctx.MkConst("a", array_sort);
-        
+       
+	}
+	public Expr bp_smt(Context ctx, a_expression bp, ArrayList<arrayModification> am, ArrayList<parameter> functionInputs) throws Z3Exception{
+		// bp is the a_expression 
+		// am is a list of array modification
+		// functionInputs is declared const
+		HashMap<String,Expr> symbolTable = new HashMap<String, Expr>();
+		parameter p;
+		for(int i=0; i<functionInputs.size(); i++){ // input type can be int, double, boolean, int[], double[]
+			p = functionInputs.get(i);
+			if(p.type.equals("int"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name,ctx.IntSort()));
+        	else if(p.type.equals("double"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name,ctx.RealSort()));
+        	else if(p.type.equals("boolean"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name,ctx.BoolSort()));
+        	else if(p.type.equals("int_array"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name, ctx.MkArraySort(ctx.IntSort(), ctx.IntSort())));
+        	else if(p.type.equals("double_array"))
+        		symbolTable.put(p.name, ctx.MkConst(p.name, ctx.MkArraySort(ctx.IntSort(), ctx.RealSort())));
+        	else
+        		System.out.println("Does not support the input type!");
+        	
+		}
+		
+		if(am.size()>0){
+			arrayModification x = null;
+			for(int i =0; i<am.size(); i++){
+				x = am.get(i);
+				if(symbolTable.containsKey(x.a)){
+					//symbolTable.put(x.a, x.to_smt(ctx, symbolTable));
+				}
+			}
+		}
+		
+		//Expr ret = bp.to_smt(ctx, symbolTable);
+		return null;
 	}
 	
-	public static Solver add_sorted_theorem(Context ctx, Solver s, Goal g, Expr a, String array_name, String begin, String end) throws Z3Exception{
-		
-		Expr a_begin = null;
-		if(begin.equals("0"))
-			a_begin = ctx.MkIntConst("0");
-		else
-			a_begin= ctx.MkConst(begin, ctx.IntSort());
-		
-		Expr a_end = ctx.MkConst(end, ctx.IntSort());
-        s.Assert(ctx.MkLt((ArithExpr) a_begin, (ArithExpr) a_end));
-        Expr i = ctx.MkConst(array_name+"_i", ctx.IntSort());
-        Expr j = ctx.MkConst(array_name+"_j", ctx.IntSort());
-        
-        BoolExpr sorted_expr1 = ctx.MkAnd(new BoolExpr[]{ ctx.MkLe((ArithExpr) a_begin, (ArithExpr) i), ctx.MkLt((ArithExpr) i, (ArithExpr) a_end),
-        												  ctx.MkLe((ArithExpr) a_begin, (ArithExpr) j), ctx.MkLt((ArithExpr) j, (ArithExpr) a_end),
-        												  ctx.MkLe((ArithExpr)i, (ArithExpr)j)});
-        BoolExpr sorted_expr = ctx.MkImplies(sorted_expr1, ctx.MkLe((ArithExpr)ctx.MkSelect((ArrayExpr) a, i), (ArithExpr)ctx.MkSelect((ArrayExpr) a, j)));
-        
-        BoolExpr  sorted= ctx.MkForall(new Expr[]{i, j}, /* names of quantified variables */
-                sorted_expr, 1, null, null, null, null);
-        
-        
-        s.Assert(sorted);
-        g.Assert(sorted);
-        
-        return s;
-	}
-	public static Solver add_partitioned_theorem(Context ctx, Solver s, Goal g, Expr a, String array_name, ArithExpr l1,ArithExpr u1, ArithExpr l2, ArithExpr u2) throws Z3Exception{
-		
-		
-		s.Assert(ctx.MkAnd(new BoolExpr[]{ctx.MkLt(ctx.MkInt(-1), l1), ctx.MkLe(l1, u1), ctx.MkLt(u1, l2), ctx.MkLe(l2, u2)}));
-      
-        Expr i = ctx.MkConst(array_name+"_i", ctx.IntSort());
-        Expr j = ctx.MkConst(array_name+"_j", ctx.IntSort());
-        
-        BoolExpr partitioned_expr1 = ctx.MkAnd(new BoolExpr[]{ ctx.MkLe(l1, (ArithExpr) i), ctx.MkLe((ArithExpr) i, u1),
-        												  ctx.MkLe(l2, (ArithExpr) j), ctx.MkLe((ArithExpr) j, u2),
-        												  ctx.MkLt((ArithExpr)i, (ArithExpr)j)});
-        BoolExpr partitioned_expr = ctx.MkImplies(partitioned_expr1, ctx.MkLe((ArithExpr)ctx.MkSelect((ArrayExpr) a, i), (ArithExpr)ctx.MkSelect((ArrayExpr) a, j)));
-        
-        BoolExpr  partitioned= ctx.MkForall(new Expr[]{i, j}, /* names of quantified variables */
-        		partitioned_expr, 1, null, null, null, null);
-        
-        
-        s.Assert(partitioned);
-        g.Assert(partitioned);
-        
-        return s;
-	}
+	
+	
 }
 /*
         // test partitioned theorem
@@ -87,4 +81,5 @@ public class java_array {
         	System.out.println(f.toString());
         Status q = s.Check();
         System.out.println(q);
+        
 */

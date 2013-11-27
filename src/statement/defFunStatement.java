@@ -10,6 +10,7 @@ import expression.expression;
 public class defFunStatement extends statement{
 	public String name;
 	public ArrayList<parameter> inputs;
+	public String return_type;
 	public ArrayList<statement> body;
 	public annotation pre;
 	public annotation post;
@@ -25,6 +26,9 @@ public class defFunStatement extends statement{
 	}
 	
 	public ArrayList<ArrayList<statement>> bp(){
+		if(this.pre!=null)
+			this.pre.e.annotation_process();
+		
 		/*********** tempory implementation*************************************************/
 		HashMap<String, defFunStatement> functions = new HashMap<String, defFunStatement>();
 		/***********************************************************************************/
@@ -202,6 +206,7 @@ public class defFunStatement extends statement{
 				this.basicpath.add(pathlist.get(i));
 		}
 		if(this.post!=null){
+			this.post.e.annotation_process();
 			for(int i=0; i<this.basicpath.size(); i++){
 				if(!this.basicpath.get(i).get(this.basicpath.get(i).size()-1).type.equals("cut") 
 						||(this.basicpath.get(i).get(this.basicpath.get(i).size()-1).type.equals("cut") && this.basicpath.get(i).get(this.basicpath.get(i).size()-2).type.equals("returnStatement"))

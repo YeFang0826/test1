@@ -1,0 +1,12 @@
+(declare-const a (Array Int Int))
+(declare-const a_lastIndex Int)
+(declare-const a_i Int)
+(declare-const a_j Int)
+(declare-const i Int)
+(declare-const j Int)
+(declare-const l Int)
+(declare-const u Int)
+(declare-const e Int)
+
+
+

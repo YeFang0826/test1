@@ -19,6 +19,7 @@ public class whileStatement extends statement{
 	}
 	public ArrayList<ArrayList<statement>> bp(HashMap<String, defFunStatement> functions){
 		if(this.invariant!=null){
+			this.invariant.e.annotation_process();
 			//@L
 			ArrayList<statement> path = new ArrayList<statement>();
 			path.add(new annotationStatement(this.invariant.e, "invariant"));

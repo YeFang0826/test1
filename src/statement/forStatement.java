@@ -27,13 +27,16 @@ public class forStatement extends statement{
 		assignStatement increment = new assignStatement();
 		increment.name = this.iterator;
 		increment.assignment = this.increment;
+		
 		this.body.add(increment);
 		
 		if(this.invariant!=null){
+			this.invariant.e.annotation_process();
 			// init + @L
 			defVarStatement iteratorInit = new defVarStatement();
 			iteratorInit.name = this.iterator;
 			iteratorInit.assignment = this.begin; 
+			iteratorInit.vtype = "int";
 		
 			ArrayList<statement> path = new ArrayList<statement>();
 		
@@ -211,7 +214,6 @@ public class forStatement extends statement{
 						
 		// @L + not guard = last iteration
 				path = new ArrayList<statement>();
-				path.add(iteratorInit);
 				path.add(new annotationStatement(this.invariant.e, "invariant"));
 				path.add(new assumeStatement(new expression(this.guard, "not")));
 				this.basicpath.add(path);

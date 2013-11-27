@@ -72,6 +72,7 @@ defFunStatement returns [defFunStatement defFunStatement]:
          '(' inputs 
          { $defFunStatement.name = $ID.text; 
            $defFunStatement.inputs = $inputs.inputs; 
+           $defFunStatement.return_type = $type.type;
            // return type is not added. needed for type checking
          }
          ')'
@@ -370,9 +371,9 @@ inputs returns [ArrayList<parameter> inputs]:
 type returns [String type, int dimension]: 
       { int dimension = 0; }
       (
-      INT { $type = "int"; } ('[' ']' { $type = "array"; dimension = dimension+1; })* 
+      INT { $type = "int"; } ('[' ']' { $type = "int_array"; dimension = dimension+1; })? 
       |
-       DOUBLE { $type = "double"; } ('[' ']' { $type = "array"; dimension = dimension+1; } )*
+       DOUBLE { $type = "double"; } ('[' ']' { $type = "double_array"; dimension = dimension+1; } )?
       |
        BOOLEAN { $type = "boolean"; }
       |
@@ -397,13 +398,13 @@ inContextAnnotation returns [inContextAnnotation inContextAnnotation]:
           
 quantifier returns [quantifier quantifier]:
          (EXIST { $quantifier = new quantifier("exist"); }| FORALL { $quantifier = new quantifier("forall"); } ) 
-         '(' op1=type  op2=ID { $quantifier.v.add(new parameter($op1.type, $op1.dimension, $op2.text)); }
+         '(' op1=type  op2=ID { $quantifier.v.add(new parameter($op1.type, $op1.dimension,  $op2.text)); }
          (',' op3=type  op4=ID { $quantifier.v.add(new parameter($op3.type, $op3.dimension, $op4.text)); } )* ')' ','
          ;
          
 a_Expr returns [a_expression a_Expr]: 
        { ArrayList<quantifier> qs = new ArrayList<quantifier>(); }
-       ( quantifier { qs.add($quantifier.quantifier); System.out.println("add quantifier"); })*
+       ( quantifier { qs.add($quantifier.quantifier); })*
       { a_expression temp= null; a_expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  }
       op1=a_negation 
       ( 
@@ -572,7 +573,6 @@ a_term returns [a_term a_term]:
           { if(!isArrayElement){
               isArrayElement = true;
               index = new ArrayList<a_expression>();
-              System.out.println("has index");
              }
              index.add($op1.a_Expr);
           }

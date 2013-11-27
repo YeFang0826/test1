@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g 2013-11-20 21:58:26
+// $ANTLR 3.5 /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g 2013-11-26 22:23:03
 
   package grammar1;
   import java.util.*;
@@ -194,7 +194,345 @@ public class PiParser extends Parser {
 		try {
 			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:35:40: ( defFunStatement | ( inContextAnnotation )? ( defVarStatement | assignStatement | ifStatement ) | whileStatement | forStatement | returnStatement )
 			int alt3=5;
-			alt3 = dfa3.predict(input);
+			switch ( input.LA(1) ) {
+			case 53:
+				{
+				int LA3_1 = input.LA(2);
+				if ( ((LA3_1 >= POST && LA3_1 <= PRE)) ) {
+					alt3=1;
+				}
+				else if ( (LA3_1==ASSERT) ) {
+					alt3=2;
+				}
+
+				else {
+					int nvaeMark = input.mark();
+					try {
+						input.consume();
+						NoViableAltException nvae =
+							new NoViableAltException("", 3, 1, input);
+						throw nvae;
+					} finally {
+						input.rewind(nvaeMark);
+					}
+				}
+
+				}
+				break;
+			case INT:
+				{
+				int LA3_2 = input.LA(2);
+				if ( (LA3_2==54) ) {
+					int LA3_11 = input.LA(3);
+					if ( (LA3_11==55) ) {
+						int LA3_14 = input.LA(4);
+						if ( (LA3_14==ID) ) {
+							int LA3_12 = input.LA(5);
+							if ( (LA3_12==39) ) {
+								alt3=1;
+							}
+							else if ( (LA3_12==46||LA3_12==49) ) {
+								alt3=2;
+							}
+
+							else {
+								int nvaeMark = input.mark();
+								try {
+									for (int nvaeConsume = 0; nvaeConsume < 5 - 1; nvaeConsume++) {
+										input.consume();
+									}
+									NoViableAltException nvae =
+										new NoViableAltException("", 3, 12, input);
+									throw nvae;
+								} finally {
+									input.rewind(nvaeMark);
+								}
+							}
+
+						}
+
+						else {
+							int nvaeMark = input.mark();
+							try {
+								for (int nvaeConsume = 0; nvaeConsume < 4 - 1; nvaeConsume++) {
+									input.consume();
+								}
+								NoViableAltException nvae =
+									new NoViableAltException("", 3, 14, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+					}
+
+					else {
+						int nvaeMark = input.mark();
+						try {
+							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
+								input.consume();
+							}
+							NoViableAltException nvae =
+								new NoViableAltException("", 3, 11, input);
+							throw nvae;
+						} finally {
+							input.rewind(nvaeMark);
+						}
+					}
+
+				}
+				else if ( (LA3_2==ID) ) {
+					int LA3_12 = input.LA(3);
+					if ( (LA3_12==39) ) {
+						alt3=1;
+					}
+					else if ( (LA3_12==46||LA3_12==49) ) {
+						alt3=2;
+					}
+
+					else {
+						int nvaeMark = input.mark();
+						try {
+							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
+								input.consume();
+							}
+							NoViableAltException nvae =
+								new NoViableAltException("", 3, 12, input);
+							throw nvae;
+						} finally {
+							input.rewind(nvaeMark);
+						}
+					}
+
+				}
+
+				else {
+					int nvaeMark = input.mark();
+					try {
+						input.consume();
+						NoViableAltException nvae =
+							new NoViableAltException("", 3, 2, input);
+						throw nvae;
+					} finally {
+						input.rewind(nvaeMark);
+					}
+				}
+
+				}
+				break;
+			case DOUBLE:
+				{
+				int LA3_3 = input.LA(2);
+				if ( (LA3_3==54) ) {
+					int LA3_13 = input.LA(3);
+					if ( (LA3_13==55) ) {
+						int LA3_15 = input.LA(4);
+						if ( (LA3_15==ID) ) {
+							int LA3_12 = input.LA(5);
+							if ( (LA3_12==39) ) {
+								alt3=1;
+							}
+							else if ( (LA3_12==46||LA3_12==49) ) {
+								alt3=2;
+							}
+
+							else {
+								int nvaeMark = input.mark();
+								try {
+									for (int nvaeConsume = 0; nvaeConsume < 5 - 1; nvaeConsume++) {
+										input.consume();
+									}
+									NoViableAltException nvae =
+										new NoViableAltException("", 3, 12, input);
+									throw nvae;
+								} finally {
+									input.rewind(nvaeMark);
+								}
+							}
+
+						}
+
+						else {
+							int nvaeMark = input.mark();
+							try {
+								for (int nvaeConsume = 0; nvaeConsume < 4 - 1; nvaeConsume++) {
+									input.consume();
+								}
+								NoViableAltException nvae =
+									new NoViableAltException("", 3, 15, input);
+								throw nvae;
+							} finally {
+								input.rewind(nvaeMark);
+							}
+						}
+
+					}
+
+					else {
+						int nvaeMark = input.mark();
+						try {
+							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
+								input.consume();
+							}
+							NoViableAltException nvae =
+								new NoViableAltException("", 3, 13, input);
+							throw nvae;
+						} finally {
+							input.rewind(nvaeMark);
+						}
+					}
+
+				}
+				else if ( (LA3_3==ID) ) {
+					int LA3_12 = input.LA(3);
+					if ( (LA3_12==39) ) {
+						alt3=1;
+					}
+					else if ( (LA3_12==46||LA3_12==49) ) {
+						alt3=2;
+					}
+
+					else {
+						int nvaeMark = input.mark();
+						try {
+							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
+								input.consume();
+							}
+							NoViableAltException nvae =
+								new NoViableAltException("", 3, 12, input);
+							throw nvae;
+						} finally {
+							input.rewind(nvaeMark);
+						}
+					}
+
+				}
+
+				else {
+					int nvaeMark = input.mark();
+					try {
+						input.consume();
+						NoViableAltException nvae =
+							new NoViableAltException("", 3, 3, input);
+						throw nvae;
+					} finally {
+						input.rewind(nvaeMark);
+					}
+				}
+
+				}
+				break;
+			case BOOLEAN:
+				{
+				int LA3_4 = input.LA(2);
+				if ( (LA3_4==ID) ) {
+					int LA3_12 = input.LA(3);
+					if ( (LA3_12==39) ) {
+						alt3=1;
+					}
+					else if ( (LA3_12==46||LA3_12==49) ) {
+						alt3=2;
+					}
+
+					else {
+						int nvaeMark = input.mark();
+						try {
+							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
+								input.consume();
+							}
+							NoViableAltException nvae =
+								new NoViableAltException("", 3, 12, input);
+							throw nvae;
+						} finally {
+							input.rewind(nvaeMark);
+						}
+					}
+
+				}
+
+				else {
+					int nvaeMark = input.mark();
+					try {
+						input.consume();
+						NoViableAltException nvae =
+							new NoViableAltException("", 3, 4, input);
+						throw nvae;
+					} finally {
+						input.rewind(nvaeMark);
+					}
+				}
+
+				}
+				break;
+			case VOID:
+				{
+				int LA3_5 = input.LA(2);
+				if ( (LA3_5==ID) ) {
+					int LA3_12 = input.LA(3);
+					if ( (LA3_12==39) ) {
+						alt3=1;
+					}
+					else if ( (LA3_12==46||LA3_12==49) ) {
+						alt3=2;
+					}
+
+					else {
+						int nvaeMark = input.mark();
+						try {
+							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
+								input.consume();
+							}
+							NoViableAltException nvae =
+								new NoViableAltException("", 3, 12, input);
+							throw nvae;
+						} finally {
+							input.rewind(nvaeMark);
+						}
+					}
+
+				}
+
+				else {
+					int nvaeMark = input.mark();
+					try {
+						input.consume();
+						NoViableAltException nvae =
+							new NoViableAltException("", 3, 5, input);
+						throw nvae;
+					} finally {
+						input.rewind(nvaeMark);
+					}
+				}
+
+				}
+				break;
+			case ID:
+			case IF:
+				{
+				alt3=2;
+				}
+				break;
+			case WHILE:
+				{
+				alt3=3;
+				}
+				break;
+			case FOR:
+				{
+				alt3=4;
+				}
+				break;
+			case RETURN:
+				{
+				alt3=5;
+				}
+				break;
+			default:
+				NoViableAltException nvae =
+					new NoViableAltException("", 3, 0, input);
+				throw nvae;
+			}
 			switch (alt3) {
 				case 1 :
 					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:36:9: defFunStatement
@@ -360,7 +698,8 @@ public class PiParser extends Parser {
 		preFunAnnotation preFunAnnotation11 =null;
 		postFunAnnotation postFunAnnotation12 =null;
 		ArrayList<parameter> inputs14 =null;
-		statement statement15 =null;
+		ParserRuleReturnScope type15 =null;
+		statement statement16 =null;
 
 		try {
 			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:67:58: ( ( preFunAnnotation )? ( postFunAnnotation )? type ID '(' inputs ')' '{' ( statement )+ '}' )
@@ -411,7 +750,7 @@ public class PiParser extends Parser {
 			}
 
 			pushFollow(FOLLOW_type_in_defFunStatement395);
-			type();
+			type15=type();
 			state._fsp--;
 
 			ID13=(Token)match(input,ID,FOLLOW_ID_in_defFunStatement397); 
@@ -422,11 +761,12 @@ public class PiParser extends Parser {
 
 			 defFunStatement.name = (ID13!=null?ID13.getText():null); 
 			           defFunStatement.inputs = inputs14; 
+			           defFunStatement.return_type = (type15!=null?((PiParser.type_return)type15).type:null);
 			           // return type is not added. needed for type checking
 			         
 			match(input,40,FOLLOW_40_in_defFunStatement433); 
 			match(input,56,FOLLOW_56_in_defFunStatement443); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:79:11: ( statement )+
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:80:11: ( statement )+
 			int cnt6=0;
 			loop6:
 			while (true) {
@@ -438,13 +778,13 @@ public class PiParser extends Parser {
 
 				switch (alt6) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:79:12: statement
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:80:12: statement
 					{
 					pushFollow(FOLLOW_statement_in_defFunStatement456);
-					statement15=statement();
+					statement16=statement();
 					state._fsp--;
 
-					 defFunStatement.body.add(statement15); 
+					 defFunStatement.body.add(statement16); 
 					}
 					break;
 
@@ -474,27 +814,27 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "defVarStatement"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:83:1: defVarStatement returns [defVarStatement defVarStatement] : type ID ( '=' expr )? ';' ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:84:1: defVarStatement returns [defVarStatement defVarStatement] : type ID ( '=' expr )? ';' ;
 	public final defVarStatement defVarStatement() throws RecognitionException {
 		defVarStatement defVarStatement = null;
 
 
-		Token ID17=null;
-		ParserRuleReturnScope type16 =null;
-		expression expr18 =null;
+		Token ID18=null;
+		ParserRuleReturnScope type17 =null;
+		expression expr19 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:83:58: ( type ID ( '=' expr )? ';' )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:84:9: type ID ( '=' expr )? ';'
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:84:58: ( type ID ( '=' expr )? ';' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:85:9: type ID ( '=' expr )? ';'
 			{
 			 defVarStatement = new defVarStatement(); 
 			pushFollow(FOLLOW_type_in_defVarStatement517);
-			type16=type();
+			type17=type();
 			state._fsp--;
 
-			ID17=(Token)match(input,ID,FOLLOW_ID_in_defVarStatement519); 
-			 defVarStatement.vtype = (type16!=null?((PiParser.type_return)type16).type:null); defVarStatement.name = (ID17!=null?ID17.getText():null);  
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:86:9: ( '=' expr )?
+			ID18=(Token)match(input,ID,FOLLOW_ID_in_defVarStatement519); 
+			 defVarStatement.vtype = (type17!=null?((PiParser.type_return)type17).type:null); defVarStatement.name = (ID18!=null?ID18.getText():null);  
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:87:9: ( '=' expr )?
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0==49) ) {
@@ -502,14 +842,14 @@ public class PiParser extends Parser {
 			}
 			switch (alt7) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:86:10: '=' expr
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:87:10: '=' expr
 					{
 					match(input,49,FOLLOW_49_in_defVarStatement532); 
 					pushFollow(FOLLOW_expr_in_defVarStatement534);
-					expr18=expr();
+					expr19=expr();
 					state._fsp--;
 
-					 defVarStatement.assignment = expr18; 
+					 defVarStatement.assignment = expr19; 
 					}
 					break;
 
@@ -533,23 +873,23 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "assignStatement"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:89:1: assignStatement returns [assignStatement assignStatement] : ID ( '[' op1= expr ']' )* '=' op2= expr ';' ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:90:1: assignStatement returns [assignStatement assignStatement] : ID ( '[' op1= expr ']' )* '=' op2= expr ';' ;
 	public final assignStatement assignStatement() throws RecognitionException {
 		assignStatement assignStatement = null;
 
 
-		Token ID19=null;
+		Token ID20=null;
 		expression op1 =null;
 		expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:89:58: ( ID ( '[' op1= expr ']' )* '=' op2= expr ';' )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:90:9: ID ( '[' op1= expr ']' )* '=' op2= expr ';'
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:90:58: ( ID ( '[' op1= expr ']' )* '=' op2= expr ';' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:91:9: ID ( '[' op1= expr ']' )* '=' op2= expr ';'
 			{
 			 assignStatement = new assignStatement(); String name = ""; boolean isArrayElement = false; ArrayList<expression> index = null;
-			ID19=(Token)match(input,ID,FOLLOW_ID_in_assignStatement586); 
-			 name = (ID19!=null?ID19.getText():null); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:92:9: ( '[' op1= expr ']' )*
+			ID20=(Token)match(input,ID,FOLLOW_ID_in_assignStatement586); 
+			 name = (ID20!=null?ID20.getText():null); 
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:93:9: ( '[' op1= expr ']' )*
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -560,7 +900,7 @@ public class PiParser extends Parser {
 
 				switch (alt8) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:92:10: '[' op1= expr ']'
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:93:10: '[' op1= expr ']'
 					{
 					match(input,54,FOLLOW_54_in_assignStatement601); 
 					pushFollow(FOLLOW_expr_in_assignStatement607);
@@ -614,22 +954,22 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "whileStatement"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:112:1: whileStatement returns [whileStatement whileStatement] : WHILE ( loopInvariant )? '(' expr ')' '{' ( statement )+ '}' ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:113:1: whileStatement returns [whileStatement whileStatement] : WHILE ( loopInvariant )? '(' expr ')' '{' ( statement )+ '}' ;
 	public final whileStatement whileStatement() throws RecognitionException {
 		whileStatement whileStatement = null;
 
 
-		loopInvariant loopInvariant20 =null;
-		expression expr21 =null;
-		statement statement22 =null;
+		loopInvariant loopInvariant21 =null;
+		expression expr22 =null;
+		statement statement23 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:112:55: ( WHILE ( loopInvariant )? '(' expr ')' '{' ( statement )+ '}' )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:113:9: WHILE ( loopInvariant )? '(' expr ')' '{' ( statement )+ '}'
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:113:55: ( WHILE ( loopInvariant )? '(' expr ')' '{' ( statement )+ '}' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:114:9: WHILE ( loopInvariant )? '(' expr ')' '{' ( statement )+ '}'
 			{
 			 whileStatement = new whileStatement(); ArrayList<statement> body = new ArrayList<statement>(); 
 			match(input,WHILE,FOLLOW_WHILE_in_whileStatement717); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:114:15: ( loopInvariant )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:115:15: ( loopInvariant )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==53) ) {
@@ -637,13 +977,13 @@ public class PiParser extends Parser {
 			}
 			switch (alt9) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:114:16: loopInvariant
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:115:16: loopInvariant
 					{
 					pushFollow(FOLLOW_loopInvariant_in_whileStatement720);
-					loopInvariant20=loopInvariant();
+					loopInvariant21=loopInvariant();
 					state._fsp--;
 
-					 whileStatement.invariant = loopInvariant20; 
+					 whileStatement.invariant = loopInvariant21; 
 					}
 					break;
 
@@ -651,13 +991,13 @@ public class PiParser extends Parser {
 
 			match(input,39,FOLLOW_39_in_whileStatement734); 
 			pushFollow(FOLLOW_expr_in_whileStatement736);
-			expr21=expr();
+			expr22=expr();
 			state._fsp--;
 
-			 whileStatement.guard = expr21; 
+			 whileStatement.guard = expr22; 
 			match(input,40,FOLLOW_40_in_whileStatement761); 
 			match(input,56,FOLLOW_56_in_whileStatement772); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:119:11: ( statement )+
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:120:11: ( statement )+
 			int cnt10=0;
 			loop10:
 			while (true) {
@@ -669,13 +1009,13 @@ public class PiParser extends Parser {
 
 				switch (alt10) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:119:12: statement
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:120:12: statement
 					{
 					pushFollow(FOLLOW_statement_in_whileStatement786);
-					statement22=statement();
+					statement23=statement();
 					state._fsp--;
 
-					 body.add(statement22); 
+					 body.add(statement23); 
 					}
 					break;
 
@@ -706,7 +1046,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "forStatement"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:123:1: forStatement returns [forStatement forStatement] : FOR ( loopInvariant )? '(' ( INT )? op1= ID '=' op3= expr ';' op4= expr ';' op2= ID '=' op5= expr ')' '{' ( statement )+ '}' ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:124:1: forStatement returns [forStatement forStatement] : FOR ( loopInvariant )? '(' ( INT )? op1= ID '=' op3= expr ';' op4= expr ';' op2= ID '=' op5= expr ')' '{' ( statement )+ '}' ;
 	public final forStatement forStatement() throws RecognitionException {
 		forStatement forStatement = null;
 
@@ -716,16 +1056,16 @@ public class PiParser extends Parser {
 		expression op3 =null;
 		expression op4 =null;
 		expression op5 =null;
-		loopInvariant loopInvariant23 =null;
-		statement statement24 =null;
+		loopInvariant loopInvariant24 =null;
+		statement statement25 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:123:49: ( FOR ( loopInvariant )? '(' ( INT )? op1= ID '=' op3= expr ';' op4= expr ';' op2= ID '=' op5= expr ')' '{' ( statement )+ '}' )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:124:9: FOR ( loopInvariant )? '(' ( INT )? op1= ID '=' op3= expr ';' op4= expr ';' op2= ID '=' op5= expr ')' '{' ( statement )+ '}'
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:124:49: ( FOR ( loopInvariant )? '(' ( INT )? op1= ID '=' op3= expr ';' op4= expr ';' op2= ID '=' op5= expr ')' '{' ( statement )+ '}' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:125:9: FOR ( loopInvariant )? '(' ( INT )? op1= ID '=' op3= expr ';' op4= expr ';' op2= ID '=' op5= expr ')' '{' ( statement )+ '}'
 			{
 			 forStatement = new forStatement(); 
 			match(input,FOR,FOLLOW_FOR_in_forStatement848); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:125:13: ( loopInvariant )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:126:13: ( loopInvariant )?
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0==53) ) {
@@ -733,20 +1073,20 @@ public class PiParser extends Parser {
 			}
 			switch (alt11) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:125:14: loopInvariant
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:126:14: loopInvariant
 					{
 					pushFollow(FOLLOW_loopInvariant_in_forStatement851);
-					loopInvariant23=loopInvariant();
+					loopInvariant24=loopInvariant();
 					state._fsp--;
 
-					 forStatement.invariant = loopInvariant23; 
+					 forStatement.invariant = loopInvariant24; 
 					}
 					break;
 
 			}
 
 			match(input,39,FOLLOW_39_in_forStatement865); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:127:11: ( INT )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:128:11: ( INT )?
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0==INT) ) {
@@ -754,7 +1094,7 @@ public class PiParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:127:12: INT
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:128:12: INT
 					{
 					match(input,INT,FOLLOW_INT_in_forStatement879); 
 					}
@@ -785,7 +1125,7 @@ public class PiParser extends Parser {
 			 forStatement.increment = op5; 
 			match(input,40,FOLLOW_40_in_forStatement967); 
 			match(input,56,FOLLOW_56_in_forStatement978); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:134:11: ( statement )+
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:135:11: ( statement )+
 			int cnt13=0;
 			loop13:
 			while (true) {
@@ -797,13 +1137,13 @@ public class PiParser extends Parser {
 
 				switch (alt13) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:134:12: statement
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:135:12: statement
 					{
 					pushFollow(FOLLOW_statement_in_forStatement991);
-					statement24=statement();
+					statement25=statement();
 					state._fsp--;
 
-					 forStatement.body.add(statement24); 
+					 forStatement.body.add(statement25); 
 					}
 					break;
 
@@ -833,7 +1173,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "ifStatement"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:137:1: ifStatement returns [ifStatement ifStatement] : IF '(' op1= expr ')' '{' (op3= statement )+ '}' ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )* ( ELSE '{' (op5= statement )+ '}' )? ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:138:1: ifStatement returns [ifStatement ifStatement] : IF '(' op1= expr ')' '{' (op3= statement )+ '}' ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )* ( ELSE '{' (op5= statement )+ '}' )? ;
 	public final ifStatement ifStatement() throws RecognitionException {
 		ifStatement ifStatement = null;
 
@@ -845,8 +1185,8 @@ public class PiParser extends Parser {
 		statement op5 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:137:46: ( IF '(' op1= expr ')' '{' (op3= statement )+ '}' ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )* ( ELSE '{' (op5= statement )+ '}' )? )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:138:8: IF '(' op1= expr ')' '{' (op3= statement )+ '}' ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )* ( ELSE '{' (op5= statement )+ '}' )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:138:46: ( IF '(' op1= expr ')' '{' (op3= statement )+ '}' ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )* ( ELSE '{' (op5= statement )+ '}' )? )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:139:8: IF '(' op1= expr ')' '{' (op3= statement )+ '}' ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )* ( ELSE '{' (op5= statement )+ '}' )?
 			{
 			 ifStatement = new ifStatement(); 
 			match(input,IF,FOLLOW_IF_in_ifStatement1040); 
@@ -859,7 +1199,7 @@ public class PiParser extends Parser {
 			match(input,40,FOLLOW_40_in_ifStatement1051); 
 			match(input,56,FOLLOW_56_in_ifStatement1061); 
 			 ArrayList<statement> temp = new ArrayList<statement>(); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:142:8: (op3= statement )+
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:143:8: (op3= statement )+
 			int cnt14=0;
 			loop14:
 			while (true) {
@@ -871,7 +1211,7 @@ public class PiParser extends Parser {
 
 				switch (alt14) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:142:9: op3= statement
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:143:9: op3= statement
 					{
 					pushFollow(FOLLOW_statement_in_ifStatement1085);
 					op3=statement();
@@ -891,7 +1231,7 @@ public class PiParser extends Parser {
 
 			 ifStatement.exe.add(temp); 
 			match(input,59,FOLLOW_59_in_ifStatement1109); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:146:8: ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:147:8: ( ELIF '(' op2= expr ')' '{' (op4= statement )+ '}' )*
 			loop16:
 			while (true) {
 				int alt16=2;
@@ -902,7 +1242,7 @@ public class PiParser extends Parser {
 
 				switch (alt16) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:146:9: ELIF '(' op2= expr ')' '{' (op4= statement )+ '}'
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:147:9: ELIF '(' op2= expr ')' '{' (op4= statement )+ '}'
 					{
 					match(input,ELIF,FOLLOW_ELIF_in_ifStatement1127); 
 					match(input,39,FOLLOW_39_in_ifStatement1129); 
@@ -914,7 +1254,7 @@ public class PiParser extends Parser {
 					match(input,40,FOLLOW_40_in_ifStatement1137); 
 					match(input,56,FOLLOW_56_in_ifStatement1147); 
 					  temp = new ArrayList<statement>(); 
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:148:8: (op4= statement )+
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:149:8: (op4= statement )+
 					int cnt15=0;
 					loop15:
 					while (true) {
@@ -926,7 +1266,7 @@ public class PiParser extends Parser {
 
 						switch (alt15) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:148:9: op4= statement
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:149:9: op4= statement
 							{
 							pushFollow(FOLLOW_statement_in_ifStatement1161);
 							op4=statement();
@@ -954,7 +1294,7 @@ public class PiParser extends Parser {
 				}
 			}
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:151:8: ( ELSE '{' (op5= statement )+ '}' )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:152:8: ( ELSE '{' (op5= statement )+ '}' )?
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==ELSE) ) {
@@ -962,12 +1302,12 @@ public class PiParser extends Parser {
 			}
 			switch (alt18) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:151:9: ELSE '{' (op5= statement )+ '}'
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:152:9: ELSE '{' (op5= statement )+ '}'
 					{
 					match(input,ELSE,FOLLOW_ELSE_in_ifStatement1196); 
 					match(input,56,FOLLOW_56_in_ifStatement1198); 
 					  temp = new ArrayList<statement>(); 
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:152:8: (op5= statement )+
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:153:8: (op5= statement )+
 					int cnt17=0;
 					loop17:
 					while (true) {
@@ -979,7 +1319,7 @@ public class PiParser extends Parser {
 
 						switch (alt17) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:152:10: op5= statement
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:153:10: op5= statement
 							{
 							pushFollow(FOLLOW_statement_in_ifStatement1213);
 							op5=statement();
@@ -1021,25 +1361,25 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "returnStatement"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:158:1: returnStatement returns [returnStatement returnStatement] : RETURN expr ';' ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:159:1: returnStatement returns [returnStatement returnStatement] : RETURN expr ';' ;
 	public final returnStatement returnStatement() throws RecognitionException {
 		returnStatement returnStatement = null;
 
 
-		expression expr25 =null;
+		expression expr26 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:158:58: ( RETURN expr ';' )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:159:9: RETURN expr ';'
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:159:58: ( RETURN expr ';' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:160:9: RETURN expr ';'
 			{
 			match(input,RETURN,FOLLOW_RETURN_in_returnStatement1282); 
 			pushFollow(FOLLOW_expr_in_returnStatement1284);
-			expr25=expr();
+			expr26=expr();
 			state._fsp--;
 
 			match(input,46,FOLLOW_46_in_returnStatement1286); 
 			 returnStatement = new returnStatement();
-			          returnStatement.toreturn = expr25;
+			          returnStatement.toreturn = expr26;
 			        
 			}
 
@@ -1058,7 +1398,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "expr"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:166:1: expr returns [expression expr] :op1= negation ( ( '&&' op2= negation | '||' op2= negation ) )* ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:167:1: expr returns [expression expr] :op1= negation ( ( '&&' op2= negation | '||' op2= negation ) )* ;
 	public final expression expr() throws RecognitionException {
 		expression expr = null;
 
@@ -1067,15 +1407,15 @@ public class PiParser extends Parser {
 		expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:166:31: (op1= negation ( ( '&&' op2= negation | '||' op2= negation ) )* )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:167:9: op1= negation ( ( '&&' op2= negation | '||' op2= negation ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:167:31: (op1= negation ( ( '&&' op2= negation | '||' op2= negation ) )* )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:168:9: op1= negation ( ( '&&' op2= negation | '||' op2= negation ) )*
 			{
 			 expression temp= null; expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  
 			pushFollow(FOLLOW_negation_in_expr1338);
 			op1=negation();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:169:7: ( ( '&&' op2= negation | '||' op2= negation ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:170:7: ( ( '&&' op2= negation | '||' op2= negation ) )*
 			loop20:
 			while (true) {
 				int alt20=2;
@@ -1086,9 +1426,9 @@ public class PiParser extends Parser {
 
 				switch (alt20) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:170:9: ( '&&' op2= negation | '||' op2= negation )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:171:9: ( '&&' op2= negation | '||' op2= negation )
 					{
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:170:9: ( '&&' op2= negation | '||' op2= negation )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:171:9: ( '&&' op2= negation | '||' op2= negation )
 					int alt19=2;
 					int LA19_0 = input.LA(1);
 					if ( (LA19_0==38) ) {
@@ -1106,7 +1446,7 @@ public class PiParser extends Parser {
 
 					switch (alt19) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:171:9: '&&' op2= negation
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:172:9: '&&' op2= negation
 							{
 							match(input,38,FOLLOW_38_in_expr1368); 
 							pushFollow(FOLLOW_negation_in_expr1372);
@@ -1117,7 +1457,7 @@ public class PiParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:173:9: '||' op2= negation
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:174:9: '||' op2= negation
 							{
 							match(input,58,FOLLOW_58_in_expr1395); 
 							pushFollow(FOLLOW_negation_in_expr1399);
@@ -1176,7 +1516,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "negation"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:199:1: negation returns [expression negation] : (op1= relation | '~' op2= relation ) ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:200:1: negation returns [expression negation] : (op1= relation | '~' op2= relation ) ;
 	public final expression negation() throws RecognitionException {
 		expression negation = null;
 
@@ -1185,11 +1525,11 @@ public class PiParser extends Parser {
 		expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:199:39: ( (op1= relation | '~' op2= relation ) )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:200:7: (op1= relation | '~' op2= relation )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:200:39: ( (op1= relation | '~' op2= relation ) )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:201:7: (op1= relation | '~' op2= relation )
 			{
 			 boolean noleaf = false; String operator = "";  
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:201:7: (op1= relation | '~' op2= relation )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:202:7: (op1= relation | '~' op2= relation )
 			int alt21=2;
 			int LA21_0 = input.LA(1);
 			if ( (LA21_0==FALSE||LA21_0==ID||LA21_0==LENGTH||LA21_0==NUMERIC||LA21_0==TRUE||LA21_0==39||LA21_0==44) ) {
@@ -1207,7 +1547,7 @@ public class PiParser extends Parser {
 
 			switch (alt21) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:201:8: op1= relation
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:202:8: op1= relation
 					{
 					pushFollow(FOLLOW_relation_in_negation1479);
 					op1=relation();
@@ -1216,7 +1556,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:203:7: '~' op2= relation
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:204:7: '~' op2= relation
 					{
 					match(input,60,FOLLOW_60_in_negation1496); 
 					pushFollow(FOLLOW_relation_in_negation1502);
@@ -1254,7 +1594,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "relation"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:215:1: relation returns [expression relation] :op1= add ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )? ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:216:1: relation returns [expression relation] :op1= add ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )? ;
 	public final expression relation() throws RecognitionException {
 		expression relation = null;
 
@@ -1263,15 +1603,15 @@ public class PiParser extends Parser {
 		expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:215:39: (op1= add ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )? )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:216:7: op1= add ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:216:39: (op1= add ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )? )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:217:7: op1= add ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )?
 			{
 			 boolean noleaf = false; String operator = "";  
 			pushFollow(FOLLOW_add_in_relation1554);
 			op1=add();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:218:7: ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:219:7: ( '>' op2= add | '<' op2= add | '>=' op2= add | '<=' op2= add | '!=' op2= add | '==' op2= add )?
 			int alt22=7;
 			switch ( input.LA(1) ) {
 				case 51:
@@ -1307,7 +1647,7 @@ public class PiParser extends Parser {
 			}
 			switch (alt22) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:219:7: '>' op2= add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:220:7: '>' op2= add
 					{
 					match(input,51,FOLLOW_51_in_relation1571); 
 					pushFollow(FOLLOW_add_in_relation1575);
@@ -1318,7 +1658,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:220:8: '<' op2= add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:221:8: '<' op2= add
 					{
 					match(input,47,FOLLOW_47_in_relation1586); 
 					pushFollow(FOLLOW_add_in_relation1590);
@@ -1329,7 +1669,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:221:8: '>=' op2= add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:222:8: '>=' op2= add
 					{
 					match(input,52,FOLLOW_52_in_relation1601); 
 					pushFollow(FOLLOW_add_in_relation1605);
@@ -1340,7 +1680,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:222:8: '<=' op2= add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:223:8: '<=' op2= add
 					{
 					match(input,48,FOLLOW_48_in_relation1616); 
 					pushFollow(FOLLOW_add_in_relation1620);
@@ -1351,7 +1691,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:223:8: '!=' op2= add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:224:8: '!=' op2= add
 					{
 					match(input,37,FOLLOW_37_in_relation1631); 
 					pushFollow(FOLLOW_add_in_relation1635);
@@ -1362,7 +1702,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:224:8: '==' op2= add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:225:8: '==' op2= add
 					{
 					match(input,50,FOLLOW_50_in_relation1646); 
 					pushFollow(FOLLOW_add_in_relation1650);
@@ -1401,7 +1741,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "add"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:237:1: add returns [expression add] :op1= mult ( ( '+' op2= mult | '-' op2= mult ) )* ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:238:1: add returns [expression add] :op1= mult ( ( '+' op2= mult | '-' op2= mult ) )* ;
 	public final expression add() throws RecognitionException {
 		expression add = null;
 
@@ -1410,15 +1750,15 @@ public class PiParser extends Parser {
 		expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:237:29: (op1= mult ( ( '+' op2= mult | '-' op2= mult ) )* )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:238:6: op1= mult ( ( '+' op2= mult | '-' op2= mult ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:238:29: (op1= mult ( ( '+' op2= mult | '-' op2= mult ) )* )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:239:6: op1= mult ( ( '+' op2= mult | '-' op2= mult ) )*
 			{
 			 expression temp= null; expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  
 			pushFollow(FOLLOW_mult_in_add1702);
 			op1=mult();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:240:7: ( ( '+' op2= mult | '-' op2= mult ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:241:7: ( ( '+' op2= mult | '-' op2= mult ) )*
 			loop24:
 			while (true) {
 				int alt24=2;
@@ -1429,9 +1769,9 @@ public class PiParser extends Parser {
 
 				switch (alt24) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:241:9: ( '+' op2= mult | '-' op2= mult )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:242:9: ( '+' op2= mult | '-' op2= mult )
 					{
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:241:9: ( '+' op2= mult | '-' op2= mult )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:242:9: ( '+' op2= mult | '-' op2= mult )
 					int alt23=2;
 					int LA23_0 = input.LA(1);
 					if ( (LA23_0==42) ) {
@@ -1449,7 +1789,7 @@ public class PiParser extends Parser {
 
 					switch (alt23) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:242:9: '+' op2= mult
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:243:9: '+' op2= mult
 							{
 							match(input,42,FOLLOW_42_in_add1732); 
 							pushFollow(FOLLOW_mult_in_add1736);
@@ -1460,7 +1800,7 @@ public class PiParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:244:9: '-' op2= mult
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:245:9: '-' op2= mult
 							{
 							match(input,44,FOLLOW_44_in_add1759); 
 							pushFollow(FOLLOW_mult_in_add1763);
@@ -1519,7 +1859,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "mult"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:270:1: mult returns [expression mult] :op1= unary ( ( '*' op2= unary | '/' op2= unary ) )* ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:271:1: mult returns [expression mult] :op1= unary ( ( '*' op2= unary | '/' op2= unary ) )* ;
 	public final expression mult() throws RecognitionException {
 		expression mult = null;
 
@@ -1528,15 +1868,15 @@ public class PiParser extends Parser {
 		expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:270:31: (op1= unary ( ( '*' op2= unary | '/' op2= unary ) )* )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:271:7: op1= unary ( ( '*' op2= unary | '/' op2= unary ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:271:31: (op1= unary ( ( '*' op2= unary | '/' op2= unary ) )* )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:272:7: op1= unary ( ( '*' op2= unary | '/' op2= unary ) )*
 			{
 			 expression temp = null; expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  
 			pushFollow(FOLLOW_unary_in_mult1835);
 			op1=unary();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:273:7: ( ( '*' op2= unary | '/' op2= unary ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:274:7: ( ( '*' op2= unary | '/' op2= unary ) )*
 			loop26:
 			while (true) {
 				int alt26=2;
@@ -1547,9 +1887,9 @@ public class PiParser extends Parser {
 
 				switch (alt26) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:274:9: ( '*' op2= unary | '/' op2= unary )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:275:9: ( '*' op2= unary | '/' op2= unary )
 					{
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:274:9: ( '*' op2= unary | '/' op2= unary )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:275:9: ( '*' op2= unary | '/' op2= unary )
 					int alt25=2;
 					int LA25_0 = input.LA(1);
 					if ( (LA25_0==41) ) {
@@ -1567,7 +1907,7 @@ public class PiParser extends Parser {
 
 					switch (alt25) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:275:9: '*' op2= unary
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:276:9: '*' op2= unary
 							{
 							match(input,41,FOLLOW_41_in_mult1865); 
 							pushFollow(FOLLOW_unary_in_mult1869);
@@ -1578,7 +1918,7 @@ public class PiParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:277:9: '/' op2= unary
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:278:9: '/' op2= unary
 							{
 							match(input,DIV,FOLLOW_DIV_in_mult1892); 
 							pushFollow(FOLLOW_unary_in_mult1896);
@@ -1637,7 +1977,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "unary"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:303:1: unary returns [expression unary] : (op1= term | '-' op2= term ) ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:304:1: unary returns [expression unary] : (op1= term | '-' op2= term ) ;
 	public final expression unary() throws RecognitionException {
 		expression unary = null;
 
@@ -1646,11 +1986,11 @@ public class PiParser extends Parser {
 		term op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:303:33: ( (op1= term | '-' op2= term ) )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:304:7: (op1= term | '-' op2= term )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:304:33: ( (op1= term | '-' op2= term ) )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:305:7: (op1= term | '-' op2= term )
 			{
 			 unary = new expression(); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:305:7: (op1= term | '-' op2= term )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:306:7: (op1= term | '-' op2= term )
 			int alt27=2;
 			int LA27_0 = input.LA(1);
 			if ( (LA27_0==FALSE||LA27_0==ID||LA27_0==LENGTH||LA27_0==NUMERIC||LA27_0==TRUE||LA27_0==39) ) {
@@ -1668,7 +2008,7 @@ public class PiParser extends Parser {
 
 			switch (alt27) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:306:9: op1= term
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:307:9: op1= term
 					{
 					pushFollow(FOLLOW_term_in_unary1981);
 					op1=term();
@@ -1678,7 +2018,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:308:9: '-' op2= term
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:309:9: '-' op2= term
 					{
 					match(input,44,FOLLOW_44_in_unary2004); 
 					pushFollow(FOLLOW_term_in_unary2010);
@@ -1708,21 +2048,21 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "term"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:312:1: term returns [term term] : ( NUMERIC | TRUE | FALSE | '(' expr ')' | ID ( '[' op1= expr ']' )* | LENGTH '(' ID ( '[' op1= expr ']' )* ')' | ID '(' (op1= expr ( ',' op2= expr )* )? ')' );
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:313:1: term returns [term term] : ( NUMERIC | TRUE | FALSE | '(' expr ')' | ID ( '[' op1= expr ']' )* | LENGTH '(' ID ( '[' op1= expr ']' )* ')' | ID '(' (op1= expr ( ',' op2= expr )* )? ')' );
 	public final term term() throws RecognitionException {
 		term term = null;
 
 
-		Token NUMERIC26=null;
-		Token ID28=null;
+		Token NUMERIC27=null;
 		Token ID29=null;
 		Token ID30=null;
+		Token ID31=null;
 		expression op1 =null;
 		expression op2 =null;
-		expression expr27 =null;
+		expression expr28 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:312:25: ( NUMERIC | TRUE | FALSE | '(' expr ')' | ID ( '[' op1= expr ']' )* | LENGTH '(' ID ( '[' op1= expr ']' )* ')' | ID '(' (op1= expr ( ',' op2= expr )* )? ')' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:313:25: ( NUMERIC | TRUE | FALSE | '(' expr ')' | ID ( '[' op1= expr ']' )* | LENGTH '(' ID ( '[' op1= expr ']' )* ')' | ID '(' (op1= expr ( ',' op2= expr )* )? ')' )
 			int alt32=7;
 			switch ( input.LA(1) ) {
 			case NUMERIC:
@@ -1781,44 +2121,44 @@ public class PiParser extends Parser {
 			}
 			switch (alt32) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:313:8: NUMERIC
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:314:8: NUMERIC
 					{
-					NUMERIC26=(Token)match(input,NUMERIC,FOLLOW_NUMERIC_in_term2055); 
-					 term = new num((NUMERIC26!=null?NUMERIC26.getText():null)); 
+					NUMERIC27=(Token)match(input,NUMERIC,FOLLOW_NUMERIC_in_term2055); 
+					 term = new num((NUMERIC27!=null?NUMERIC27.getText():null)); 
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:314:9: TRUE
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:315:9: TRUE
 					{
 					match(input,TRUE,FOLLOW_TRUE_in_term2067); 
 					 term = new bool("true");
 					}
 					break;
 				case 3 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:315:9: FALSE
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:316:9: FALSE
 					{
 					match(input,FALSE,FOLLOW_FALSE_in_term2079); 
 					 term = new bool("false");
 					}
 					break;
 				case 4 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:316:8: '(' expr ')'
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:317:8: '(' expr ')'
 					{
 					match(input,39,FOLLOW_39_in_term2090); 
 					pushFollow(FOLLOW_expr_in_term2091);
-					expr27=expr();
+					expr28=expr();
 					state._fsp--;
 
 					match(input,40,FOLLOW_40_in_term2092); 
-					 term = new expressionT(expr27); 
+					 term = new expressionT(expr28); 
 					}
 					break;
 				case 5 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:318:7: ID ( '[' op1= expr ']' )*
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:319:7: ID ( '[' op1= expr ']' )*
 					{
-					ID28=(Token)match(input,ID,FOLLOW_ID_in_term2110); 
-					 String name = (ID28!=null?ID28.getText():null); boolean isArrayElement=false; ArrayList<expression> index = null;
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:319:9: ( '[' op1= expr ']' )*
+					ID29=(Token)match(input,ID,FOLLOW_ID_in_term2110); 
+					 String name = (ID29!=null?ID29.getText():null); boolean isArrayElement=false; ArrayList<expression> index = null;
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:320:9: ( '[' op1= expr ']' )*
 					loop28:
 					while (true) {
 						int alt28=2;
@@ -1829,7 +2169,7 @@ public class PiParser extends Parser {
 
 						switch (alt28) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:319:10: '[' op1= expr ']'
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:320:10: '[' op1= expr ']'
 							{
 							match(input,54,FOLLOW_54_in_term2125); 
 							pushFollow(FOLLOW_expr_in_term2131);
@@ -1860,13 +2200,13 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:334:7: LENGTH '(' ID ( '[' op1= expr ']' )* ')'
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:335:7: LENGTH '(' ID ( '[' op1= expr ']' )* ')'
 					{
 					match(input,LENGTH,FOLLOW_LENGTH_in_term2184); 
 					match(input,39,FOLLOW_39_in_term2193); 
-					ID29=(Token)match(input,ID,FOLLOW_ID_in_term2195); 
-					 String name = (ID29!=null?ID29.getText():null); boolean isArrayElement=false; ArrayList<expression> index = null;
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:337:9: ( '[' op1= expr ']' )*
+					ID30=(Token)match(input,ID,FOLLOW_ID_in_term2195); 
+					 String name = (ID30!=null?ID30.getText():null); boolean isArrayElement=false; ArrayList<expression> index = null;
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:338:9: ( '[' op1= expr ']' )*
 					loop29:
 					while (true) {
 						int alt29=2;
@@ -1877,7 +2217,7 @@ public class PiParser extends Parser {
 
 						switch (alt29) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:337:10: '[' op1= expr ']'
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:338:10: '[' op1= expr ']'
 							{
 							match(input,54,FOLLOW_54_in_term2217); 
 							pushFollow(FOLLOW_expr_in_term2223);
@@ -1915,12 +2255,12 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:358:9: ID '(' (op1= expr ( ',' op2= expr )* )? ')'
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:359:9: ID '(' (op1= expr ( ',' op2= expr )* )? ')'
 					{
-					ID30=(Token)match(input,ID,FOLLOW_ID_in_term2276); 
-					 ud_FunctionCall call = new ud_FunctionCall((ID30!=null?ID30.getText():null)); 
+					ID31=(Token)match(input,ID,FOLLOW_ID_in_term2276); 
+					 ud_FunctionCall call = new ud_FunctionCall((ID31!=null?ID31.getText():null)); 
 					match(input,39,FOLLOW_39_in_term2286); 
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:359:11: (op1= expr ( ',' op2= expr )* )?
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:360:11: (op1= expr ( ',' op2= expr )* )?
 					int alt31=2;
 					int LA31_0 = input.LA(1);
 					if ( (LA31_0==FALSE||LA31_0==ID||LA31_0==LENGTH||LA31_0==NUMERIC||LA31_0==TRUE||LA31_0==39||LA31_0==44||LA31_0==60) ) {
@@ -1928,14 +2268,14 @@ public class PiParser extends Parser {
 					}
 					switch (alt31) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:359:12: op1= expr ( ',' op2= expr )*
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:360:12: op1= expr ( ',' op2= expr )*
 							{
 							pushFollow(FOLLOW_expr_in_term2293);
 							op1=expr();
 							state._fsp--;
 
 							 ArrayList<expression> inputs = new ArrayList<expression>(); inputs.add(op1); 
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:360:8: ( ',' op2= expr )*
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:361:8: ( ',' op2= expr )*
 							loop30:
 							while (true) {
 								int alt30=2;
@@ -1946,7 +2286,7 @@ public class PiParser extends Parser {
 
 								switch (alt30) {
 								case 1 :
-									// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:360:9: ',' op2= expr
+									// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:361:9: ',' op2= expr
 									{
 									match(input,43,FOLLOW_43_in_term2305); 
 									pushFollow(FOLLOW_expr_in_term2311);
@@ -1989,7 +2329,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "inputs"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:365:1: inputs returns [ArrayList<parameter> inputs] :op1= type op2= ID ( ',' op3= type op4= ID )* ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:366:1: inputs returns [ArrayList<parameter> inputs] :op1= type op2= ID ( ',' op3= type op4= ID )* ;
 	public final ArrayList<parameter> inputs() throws RecognitionException {
 		ArrayList<parameter> inputs = null;
 
@@ -2000,8 +2340,8 @@ public class PiParser extends Parser {
 		ParserRuleReturnScope op3 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:365:45: (op1= type op2= ID ( ',' op3= type op4= ID )* )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:366:7: op1= type op2= ID ( ',' op3= type op4= ID )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:366:45: (op1= type op2= ID ( ',' op3= type op4= ID )* )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:367:7: op1= type op2= ID ( ',' op3= type op4= ID )*
 			{
 			 inputs = new ArrayList<parameter>(); parameter toadd = null; 
 			pushFollow(FOLLOW_type_in_inputs2380);
@@ -2010,7 +2350,7 @@ public class PiParser extends Parser {
 
 			op2=(Token)match(input,ID,FOLLOW_ID_in_inputs2385); 
 			 toadd = new parameter((op1!=null?((PiParser.type_return)op1).type:null), (op1!=null?((PiParser.type_return)op1).dimension:0), (op2!=null?op2.getText():null)); inputs.add(toadd); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:368:7: ( ',' op3= type op4= ID )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:369:7: ( ',' op3= type op4= ID )*
 			loop33:
 			while (true) {
 				int alt33=2;
@@ -2021,7 +2361,7 @@ public class PiParser extends Parser {
 
 				switch (alt33) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:368:8: ',' op3= type op4= ID
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:369:8: ',' op3= type op4= ID
 					{
 					match(input,43,FOLLOW_43_in_inputs2396); 
 					pushFollow(FOLLOW_type_in_inputs2400);
@@ -2060,17 +2400,17 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "type"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:370:1: type returns [String type, int dimension] : ( INT ( '[' ']' )* | DOUBLE ( '[' ']' )* | BOOLEAN | VOID ) ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:371:1: type returns [String type, int dimension] : ( INT ( '[' ']' )? | DOUBLE ( '[' ']' )? | BOOLEAN | VOID ) ;
 	public final PiParser.type_return type() throws RecognitionException {
 		PiParser.type_return retval = new PiParser.type_return();
 		retval.start = input.LT(1);
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:370:42: ( ( INT ( '[' ']' )* | DOUBLE ( '[' ']' )* | BOOLEAN | VOID ) )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:371:7: ( INT ( '[' ']' )* | DOUBLE ( '[' ']' )* | BOOLEAN | VOID )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:371:42: ( ( INT ( '[' ']' )? | DOUBLE ( '[' ']' )? | BOOLEAN | VOID ) )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:372:7: ( INT ( '[' ']' )? | DOUBLE ( '[' ']' )? | BOOLEAN | VOID )
 			{
 			 int dimension = 0; 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:372:7: ( INT ( '[' ']' )* | DOUBLE ( '[' ']' )* | BOOLEAN | VOID )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:373:7: ( INT ( '[' ']' )? | DOUBLE ( '[' ']' )? | BOOLEAN | VOID )
 			int alt36=4;
 			switch ( input.LA(1) ) {
 			case INT:
@@ -2100,76 +2440,64 @@ public class PiParser extends Parser {
 			}
 			switch (alt36) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:373:7: INT ( '[' ']' )*
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:374:7: INT ( '[' ']' )?
 					{
 					match(input,INT,FOLLOW_INT_in_type2449); 
 					 retval.type = "int"; 
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:373:30: ( '[' ']' )*
-					loop34:
-					while (true) {
-						int alt34=2;
-						int LA34_0 = input.LA(1);
-						if ( (LA34_0==54) ) {
-							alt34=1;
-						}
-
-						switch (alt34) {
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:374:30: ( '[' ']' )?
+					int alt34=2;
+					int LA34_0 = input.LA(1);
+					if ( (LA34_0==54) ) {
+						alt34=1;
+					}
+					switch (alt34) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:373:31: '[' ']'
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:374:31: '[' ']'
 							{
 							match(input,54,FOLLOW_54_in_type2454); 
 							match(input,55,FOLLOW_55_in_type2456); 
-							 retval.type = "array"; dimension = dimension+1; 
+							 retval.type = "int_array"; dimension = dimension+1; 
 							}
 							break;
 
-						default :
-							break loop34;
-						}
 					}
 
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:375:8: DOUBLE ( '[' ']' )*
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:376:8: DOUBLE ( '[' ']' )?
 					{
 					match(input,DOUBLE,FOLLOW_DOUBLE_in_type2478); 
 					 retval.type = "double"; 
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:375:37: ( '[' ']' )*
-					loop35:
-					while (true) {
-						int alt35=2;
-						int LA35_0 = input.LA(1);
-						if ( (LA35_0==54) ) {
-							alt35=1;
-						}
-
-						switch (alt35) {
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:376:37: ( '[' ']' )?
+					int alt35=2;
+					int LA35_0 = input.LA(1);
+					if ( (LA35_0==54) ) {
+						alt35=1;
+					}
+					switch (alt35) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:375:38: '[' ']'
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:376:38: '[' ']'
 							{
 							match(input,54,FOLLOW_54_in_type2483); 
 							match(input,55,FOLLOW_55_in_type2485); 
-							 retval.type = "array"; dimension = dimension+1; 
+							 retval.type = "double_array"; dimension = dimension+1; 
 							}
 							break;
 
-						default :
-							break loop35;
-						}
 					}
 
 					}
 					break;
 				case 3 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:377:8: BOOLEAN
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:378:8: BOOLEAN
 					{
 					match(input,BOOLEAN,FOLLOW_BOOLEAN_in_type2507); 
 					 retval.type = "boolean"; 
 					}
 					break;
 				case 4 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:379:8: VOID
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:380:8: VOID
 					{
 					match(input,VOID,FOLLOW_VOID_in_type2526); 
 					 retval.type = "void"; 
@@ -2198,25 +2526,25 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "preFunAnnotation"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:384:1: preFunAnnotation returns [preFunAnnotation preFunAnnotation] : '@' PRE ':' a_Expr ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:385:1: preFunAnnotation returns [preFunAnnotation preFunAnnotation] : '@' PRE ':' a_Expr ;
 	public final preFunAnnotation preFunAnnotation() throws RecognitionException {
 		preFunAnnotation preFunAnnotation = null;
 
 
-		a_expression a_Expr31 =null;
+		a_expression a_Expr32 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:384:61: ( '@' PRE ':' a_Expr )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:385:11: '@' PRE ':' a_Expr
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:385:61: ( '@' PRE ':' a_Expr )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:386:11: '@' PRE ':' a_Expr
 			{
 			match(input,53,FOLLOW_53_in_preFunAnnotation2578); 
 			match(input,PRE,FOLLOW_PRE_in_preFunAnnotation2580); 
 			match(input,45,FOLLOW_45_in_preFunAnnotation2582); 
 			pushFollow(FOLLOW_a_Expr_in_preFunAnnotation2584);
-			a_Expr31=a_Expr();
+			a_Expr32=a_Expr();
 			state._fsp--;
 
-			 preFunAnnotation = new preFunAnnotation(a_Expr31);
+			 preFunAnnotation = new preFunAnnotation(a_Expr32);
 			}
 
 		}
@@ -2234,25 +2562,25 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "postFunAnnotation"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:387:1: postFunAnnotation returns [postFunAnnotation postFunAnnotation] : '@' POST ':' a_Expr ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:388:1: postFunAnnotation returns [postFunAnnotation postFunAnnotation] : '@' POST ':' a_Expr ;
 	public final postFunAnnotation postFunAnnotation() throws RecognitionException {
 		postFunAnnotation postFunAnnotation = null;
 
 
-		a_expression a_Expr32 =null;
+		a_expression a_Expr33 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:387:64: ( '@' POST ':' a_Expr )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:388:11: '@' POST ':' a_Expr
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:388:64: ( '@' POST ':' a_Expr )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:389:11: '@' POST ':' a_Expr
 			{
 			match(input,53,FOLLOW_53_in_postFunAnnotation2617); 
 			match(input,POST,FOLLOW_POST_in_postFunAnnotation2619); 
 			match(input,45,FOLLOW_45_in_postFunAnnotation2621); 
 			pushFollow(FOLLOW_a_Expr_in_postFunAnnotation2623);
-			a_Expr32=a_Expr();
+			a_Expr33=a_Expr();
 			state._fsp--;
 
-			 postFunAnnotation = new postFunAnnotation(a_Expr32);
+			 postFunAnnotation = new postFunAnnotation(a_Expr33);
 			}
 
 		}
@@ -2270,25 +2598,25 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "loopInvariant"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:390:1: loopInvariant returns [loopInvariant loopInvariant] : '@' L ':' a_Expr ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:391:1: loopInvariant returns [loopInvariant loopInvariant] : '@' L ':' a_Expr ;
 	public final loopInvariant loopInvariant() throws RecognitionException {
 		loopInvariant loopInvariant = null;
 
 
-		a_expression a_Expr33 =null;
+		a_expression a_Expr34 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:390:52: ( '@' L ':' a_Expr )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:391:11: '@' L ':' a_Expr
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:391:52: ( '@' L ':' a_Expr )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:392:11: '@' L ':' a_Expr
 			{
 			match(input,53,FOLLOW_53_in_loopInvariant2656); 
 			match(input,L,FOLLOW_L_in_loopInvariant2658); 
 			match(input,45,FOLLOW_45_in_loopInvariant2660); 
 			pushFollow(FOLLOW_a_Expr_in_loopInvariant2662);
-			a_Expr33=a_Expr();
+			a_Expr34=a_Expr();
 			state._fsp--;
 
-			 loopInvariant = new loopInvariant(a_Expr33);
+			 loopInvariant = new loopInvariant(a_Expr34);
 			}
 
 		}
@@ -2306,25 +2634,25 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "inContextAnnotation"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:393:1: inContextAnnotation returns [inContextAnnotation inContextAnnotation] : '@' ASSERT ':' a_Expr ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:394:1: inContextAnnotation returns [inContextAnnotation inContextAnnotation] : '@' ASSERT ':' a_Expr ;
 	public final inContextAnnotation inContextAnnotation() throws RecognitionException {
 		inContextAnnotation inContextAnnotation = null;
 
 
-		a_expression a_Expr34 =null;
+		a_expression a_Expr35 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:393:70: ( '@' ASSERT ':' a_Expr )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:394:11: '@' ASSERT ':' a_Expr
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:394:70: ( '@' ASSERT ':' a_Expr )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:395:11: '@' ASSERT ':' a_Expr
 			{
 			match(input,53,FOLLOW_53_in_inContextAnnotation2695); 
 			match(input,ASSERT,FOLLOW_ASSERT_in_inContextAnnotation2697); 
 			match(input,45,FOLLOW_45_in_inContextAnnotation2710); 
 			pushFollow(FOLLOW_a_Expr_in_inContextAnnotation2712);
-			a_Expr34=a_Expr();
+			a_Expr35=a_Expr();
 			state._fsp--;
 
-			 inContextAnnotation = new inContextAnnotation(a_Expr34);
+			 inContextAnnotation = new inContextAnnotation(a_Expr35);
 			}
 
 		}
@@ -2342,7 +2670,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "quantifier"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:398:1: quantifier returns [quantifier quantifier] : ( EXIST | FORALL ) '(' op1= type op2= ID ( ',' op3= type op4= ID )* ')' ',' ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:399:1: quantifier returns [quantifier quantifier] : ( EXIST | FORALL ) '(' op1= type op2= ID ( ',' op3= type op4= ID )* ')' ',' ;
 	public final quantifier quantifier() throws RecognitionException {
 		quantifier quantifier = null;
 
@@ -2353,10 +2681,10 @@ public class PiParser extends Parser {
 		ParserRuleReturnScope op3 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:398:43: ( ( EXIST | FORALL ) '(' op1= type op2= ID ( ',' op3= type op4= ID )* ')' ',' )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:399:10: ( EXIST | FORALL ) '(' op1= type op2= ID ( ',' op3= type op4= ID )* ')' ','
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:399:43: ( ( EXIST | FORALL ) '(' op1= type op2= ID ( ',' op3= type op4= ID )* ')' ',' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:400:10: ( EXIST | FORALL ) '(' op1= type op2= ID ( ',' op3= type op4= ID )* ')' ','
 			{
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:399:10: ( EXIST | FORALL )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:400:10: ( EXIST | FORALL )
 			int alt37=2;
 			int LA37_0 = input.LA(1);
 			if ( (LA37_0==EXIST) ) {
@@ -2374,14 +2702,14 @@ public class PiParser extends Parser {
 
 			switch (alt37) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:399:11: EXIST
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:400:11: EXIST
 					{
 					match(input,EXIST,FOLLOW_EXIST_in_quantifier2757); 
 					 quantifier = new quantifier("exist"); 
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:399:61: FORALL
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:400:61: FORALL
 					{
 					match(input,FORALL,FOLLOW_FORALL_in_quantifier2762); 
 					 quantifier = new quantifier("forall"); 
@@ -2396,8 +2724,8 @@ public class PiParser extends Parser {
 			state._fsp--;
 
 			op2=(Token)match(input,ID,FOLLOW_ID_in_quantifier2787); 
-			 quantifier.v.add(new parameter((op1!=null?((PiParser.type_return)op1).type:null), (op1!=null?((PiParser.type_return)op1).dimension:0), (op2!=null?op2.getText():null))); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:401:10: ( ',' op3= type op4= ID )*
+			 quantifier.v.add(new parameter((op1!=null?((PiParser.type_return)op1).type:null), (op1!=null?((PiParser.type_return)op1).dimension:0),  (op2!=null?op2.getText():null))); 
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:402:10: ( ',' op3= type op4= ID )*
 			loop38:
 			while (true) {
 				int alt38=2;
@@ -2408,7 +2736,7 @@ public class PiParser extends Parser {
 
 				switch (alt38) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:401:11: ',' op3= type op4= ID
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:402:11: ',' op3= type op4= ID
 					{
 					match(input,43,FOLLOW_43_in_quantifier2801); 
 					pushFollow(FOLLOW_type_in_quantifier2805);
@@ -2444,21 +2772,21 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "a_Expr"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:404:1: a_Expr returns [a_expression a_Expr] : ( quantifier )* op1= a_negation ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )* ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:405:1: a_Expr returns [a_expression a_Expr] : ( quantifier )* op1= a_negation ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )* ;
 	public final a_expression a_Expr() throws RecognitionException {
 		a_expression a_Expr = null;
 
 
 		a_expression op1 =null;
 		a_expression op2 =null;
-		quantifier quantifier35 =null;
+		quantifier quantifier36 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:404:37: ( ( quantifier )* op1= a_negation ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )* )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:405:8: ( quantifier )* op1= a_negation ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:405:37: ( ( quantifier )* op1= a_negation ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )* )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:406:8: ( quantifier )* op1= a_negation ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )*
 			{
 			 ArrayList<quantifier> qs = new ArrayList<quantifier>(); 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:406:8: ( quantifier )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:407:8: ( quantifier )*
 			loop39:
 			while (true) {
 				int alt39=2;
@@ -2469,13 +2797,13 @@ public class PiParser extends Parser {
 
 				switch (alt39) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:406:10: quantifier
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:407:10: quantifier
 					{
 					pushFollow(FOLLOW_quantifier_in_a_Expr2868);
-					quantifier35=quantifier();
+					quantifier36=quantifier();
 					state._fsp--;
 
-					 qs.add(quantifier35); System.out.println("add quantifier"); 
+					 qs.add(quantifier36); 
 					}
 					break;
 
@@ -2489,7 +2817,7 @@ public class PiParser extends Parser {
 			op1=a_negation();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:409:7: ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:410:7: ( ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation ) )*
 			loop41:
 			while (true) {
 				int alt41=2;
@@ -2500,9 +2828,9 @@ public class PiParser extends Parser {
 
 				switch (alt41) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:410:9: ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:411:9: ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation )
 					{
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:410:9: ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:411:9: ( AND op2= a_negation | OR op2= a_negation | IMPLIES op2= a_negation | EQUIV op2= a_negation )
 					int alt40=4;
 					switch ( input.LA(1) ) {
 					case AND:
@@ -2532,7 +2860,7 @@ public class PiParser extends Parser {
 					}
 					switch (alt40) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:411:9: AND op2= a_negation
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:412:9: AND op2= a_negation
 							{
 							match(input,AND,FOLLOW_AND_in_a_Expr2920); 
 							pushFollow(FOLLOW_a_negation_in_a_Expr2924);
@@ -2543,7 +2871,7 @@ public class PiParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:413:9: OR op2= a_negation
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:414:9: OR op2= a_negation
 							{
 							match(input,OR,FOLLOW_OR_in_a_Expr2947); 
 							pushFollow(FOLLOW_a_negation_in_a_Expr2951);
@@ -2554,7 +2882,7 @@ public class PiParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:415:9: IMPLIES op2= a_negation
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:416:9: IMPLIES op2= a_negation
 							{
 							match(input,IMPLIES,FOLLOW_IMPLIES_in_a_Expr2974); 
 							pushFollow(FOLLOW_a_negation_in_a_Expr2978);
@@ -2565,7 +2893,7 @@ public class PiParser extends Parser {
 							}
 							break;
 						case 4 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:417:9: EQUIV op2= a_negation
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:418:9: EQUIV op2= a_negation
 							{
 							match(input,EQUIV,FOLLOW_EQUIV_in_a_Expr3001); 
 							pushFollow(FOLLOW_a_negation_in_a_Expr3005);
@@ -2627,16 +2955,16 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "a_negation"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:446:1: a_negation returns [a_expression a_negation] : ( a_relation | NOT a_relation );
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:447:1: a_negation returns [a_expression a_negation] : ( a_relation | NOT a_relation );
 	public final a_expression a_negation() throws RecognitionException {
 		a_expression a_negation = null;
 
 
-		a_expression a_relation36 =null;
 		a_expression a_relation37 =null;
+		a_expression a_relation38 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:446:45: ( a_relation | NOT a_relation )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:447:45: ( a_relation | NOT a_relation )
 			int alt42=2;
 			int LA42_0 = input.LA(1);
 			if ( (LA42_0==FALSE||LA42_0==ID||LA42_0==NUMERIC||LA42_0==PARTITIONED||(LA42_0 >= SORTED && LA42_0 <= TRUE)||LA42_0==39||LA42_0==44||LA42_0==57) ) {
@@ -2654,26 +2982,26 @@ public class PiParser extends Parser {
 
 			switch (alt42) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:447:7: a_relation
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:448:7: a_relation
 					{
 					pushFollow(FOLLOW_a_relation_in_a_negation3072);
-					a_relation36=a_relation();
+					a_relation37=a_relation();
 					state._fsp--;
 
-					 a_negation = a_relation36; 
+					 a_negation = a_relation37; 
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:449:7: NOT a_relation
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:450:7: NOT a_relation
 					{
 					match(input,NOT,FOLLOW_NOT_in_a_negation3090); 
 					pushFollow(FOLLOW_a_relation_in_a_negation3092);
-					a_relation37=a_relation();
+					a_relation38=a_relation();
 					state._fsp--;
 
 					 a_negation = new a_expression();
 					        a_negation.op = "not";
-					        a_negation.r = a_relation37;
+					        a_negation.r = a_relation38;
 					      
 					}
 					break;
@@ -2694,7 +3022,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "a_relation"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:456:1: a_relation returns [a_expression a_relation] :op1= a_add ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )? ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:457:1: a_relation returns [a_expression a_relation] :op1= a_add ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )? ;
 	public final a_expression a_relation() throws RecognitionException {
 		a_expression a_relation = null;
 
@@ -2703,15 +3031,15 @@ public class PiParser extends Parser {
 		a_expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:456:45: (op1= a_add ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )? )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:457:7: op1= a_add ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:457:45: (op1= a_add ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )? )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:458:7: op1= a_add ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )?
 			{
 			 boolean noleaf = false; String operator = "";  
 			pushFollow(FOLLOW_a_add_in_a_relation3135);
 			op1=a_add();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:459:7: ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )?
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:460:7: ( '>' op2= a_add | '<' op2= a_add | '>=' op2= a_add | '<=' op2= a_add | '!=' op2= a_add | '==' op2= a_add )?
 			int alt43=7;
 			switch ( input.LA(1) ) {
 				case 51:
@@ -2747,7 +3075,7 @@ public class PiParser extends Parser {
 			}
 			switch (alt43) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:459:8: '>' op2= a_add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:460:8: '>' op2= a_add
 					{
 					match(input,51,FOLLOW_51_in_a_relation3145); 
 					pushFollow(FOLLOW_a_add_in_a_relation3149);
@@ -2758,7 +3086,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:460:8: '<' op2= a_add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:461:8: '<' op2= a_add
 					{
 					match(input,47,FOLLOW_47_in_a_relation3161); 
 					pushFollow(FOLLOW_a_add_in_a_relation3165);
@@ -2769,7 +3097,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:461:8: '>=' op2= a_add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:462:8: '>=' op2= a_add
 					{
 					match(input,52,FOLLOW_52_in_a_relation3177); 
 					pushFollow(FOLLOW_a_add_in_a_relation3181);
@@ -2780,7 +3108,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:462:8: '<=' op2= a_add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:463:8: '<=' op2= a_add
 					{
 					match(input,48,FOLLOW_48_in_a_relation3193); 
 					pushFollow(FOLLOW_a_add_in_a_relation3197);
@@ -2791,7 +3119,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:463:8: '!=' op2= a_add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:464:8: '!=' op2= a_add
 					{
 					match(input,37,FOLLOW_37_in_a_relation3209); 
 					pushFollow(FOLLOW_a_add_in_a_relation3213);
@@ -2802,7 +3130,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:464:8: '==' op2= a_add
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:465:8: '==' op2= a_add
 					{
 					match(input,50,FOLLOW_50_in_a_relation3225); 
 					pushFollow(FOLLOW_a_add_in_a_relation3229);
@@ -2842,7 +3170,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "a_add"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:478:1: a_add returns [a_expression a_add] :op1= a_mult ( ( '+' op2= a_mult | '-' op2= a_mult ) )* ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:479:1: a_add returns [a_expression a_add] :op1= a_mult ( ( '+' op2= a_mult | '-' op2= a_mult ) )* ;
 	public final a_expression a_add() throws RecognitionException {
 		a_expression a_add = null;
 
@@ -2851,15 +3179,15 @@ public class PiParser extends Parser {
 		a_expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:478:35: (op1= a_mult ( ( '+' op2= a_mult | '-' op2= a_mult ) )* )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:479:6: op1= a_mult ( ( '+' op2= a_mult | '-' op2= a_mult ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:479:35: (op1= a_mult ( ( '+' op2= a_mult | '-' op2= a_mult ) )* )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:480:6: op1= a_mult ( ( '+' op2= a_mult | '-' op2= a_mult ) )*
 			{
 			 a_expression temp= null; a_expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  
 			pushFollow(FOLLOW_a_mult_in_a_add3281);
 			op1=a_mult();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:481:7: ( ( '+' op2= a_mult | '-' op2= a_mult ) )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:482:7: ( ( '+' op2= a_mult | '-' op2= a_mult ) )*
 			loop45:
 			while (true) {
 				int alt45=2;
@@ -2870,9 +3198,9 @@ public class PiParser extends Parser {
 
 				switch (alt45) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:482:9: ( '+' op2= a_mult | '-' op2= a_mult )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:483:9: ( '+' op2= a_mult | '-' op2= a_mult )
 					{
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:482:9: ( '+' op2= a_mult | '-' op2= a_mult )
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:483:9: ( '+' op2= a_mult | '-' op2= a_mult )
 					int alt44=2;
 					int LA44_0 = input.LA(1);
 					if ( (LA44_0==42) ) {
@@ -2890,7 +3218,7 @@ public class PiParser extends Parser {
 
 					switch (alt44) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:483:9: '+' op2= a_mult
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:484:9: '+' op2= a_mult
 							{
 							match(input,42,FOLLOW_42_in_a_add3311); 
 							pushFollow(FOLLOW_a_mult_in_a_add3315);
@@ -2901,7 +3229,7 @@ public class PiParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:485:9: '-' op2= a_mult
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:486:9: '-' op2= a_mult
 							{
 							match(input,44,FOLLOW_44_in_a_add3338); 
 							pushFollow(FOLLOW_a_mult_in_a_add3342);
@@ -2960,7 +3288,7 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "a_mult"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:511:1: a_mult returns [a_expression a_mult] :op1= a_unary ( '*' op2= a_unary | '/' op2= a_unary )* ;
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:512:1: a_mult returns [a_expression a_mult] :op1= a_unary ( '*' op2= a_unary | '/' op2= a_unary )* ;
 	public final a_expression a_mult() throws RecognitionException {
 		a_expression a_mult = null;
 
@@ -2969,15 +3297,15 @@ public class PiParser extends Parser {
 		a_expression op2 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:511:37: (op1= a_unary ( '*' op2= a_unary | '/' op2= a_unary )* )
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:512:7: op1= a_unary ( '*' op2= a_unary | '/' op2= a_unary )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:512:37: (op1= a_unary ( '*' op2= a_unary | '/' op2= a_unary )* )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:513:7: op1= a_unary ( '*' op2= a_unary | '/' op2= a_unary )*
 			{
 			 a_expression temp= null; a_expression temp1 =null; boolean noleaf = false; boolean first = true; String operator = "";  
 			pushFollow(FOLLOW_a_unary_in_a_mult3414);
 			op1=a_unary();
 			state._fsp--;
 
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:514:7: ( '*' op2= a_unary | '/' op2= a_unary )*
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:515:7: ( '*' op2= a_unary | '/' op2= a_unary )*
 			loop46:
 			while (true) {
 				int alt46=3;
@@ -2991,7 +3319,7 @@ public class PiParser extends Parser {
 
 				switch (alt46) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:515:7: '*' op2= a_unary
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:516:7: '*' op2= a_unary
 					{
 					match(input,41,FOLLOW_41_in_a_mult3431); 
 					pushFollow(FOLLOW_a_unary_in_a_mult3435);
@@ -3002,7 +3330,7 @@ public class PiParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:517:7: '/' op2= a_unary
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:518:7: '/' op2= a_unary
 					{
 					match(input,DIV,FOLLOW_DIV_in_a_mult3454); 
 					pushFollow(FOLLOW_a_unary_in_a_mult3458);
@@ -3056,16 +3384,16 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "a_unary"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:542:1: a_unary returns [a_expression a_unary] : ( a_term | '-' a_term );
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:543:1: a_unary returns [a_expression a_unary] : ( a_term | '-' a_term );
 	public final a_expression a_unary() throws RecognitionException {
 		a_expression a_unary = null;
 
 
-		a_term a_term38 =null;
 		a_term a_term39 =null;
+		a_term a_term40 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:542:38: ( a_term | '-' a_term )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:543:38: ( a_term | '-' a_term )
 			int alt47=2;
 			int LA47_0 = input.LA(1);
 			if ( (LA47_0==FALSE||LA47_0==ID||LA47_0==NUMERIC||LA47_0==PARTITIONED||(LA47_0 >= SORTED && LA47_0 <= TRUE)||LA47_0==39||LA47_0==57) ) {
@@ -3083,28 +3411,28 @@ public class PiParser extends Parser {
 
 			switch (alt47) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:543:7: a_term
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:544:7: a_term
 					{
 					pushFollow(FOLLOW_a_term_in_a_unary3509);
-					a_term38=a_term();
+					a_term39=a_term();
 					state._fsp--;
 
 					 
 					        a_unary = new a_expression();
-					        a_unary.leaf = a_term38;
+					        a_unary.leaf = a_term39;
 					      
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:549:7: '-' a_term
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:550:7: '-' a_term
 					{
 					match(input,44,FOLLOW_44_in_a_unary3536); 
 					pushFollow(FOLLOW_a_term_in_a_unary3538);
-					a_term39=a_term();
+					a_term40=a_term();
 					state._fsp--;
 
 					 a_expression temp = new a_expression();
-					        temp.leaf = a_term39;
+					        temp.leaf = a_term40;
 					        a_unary = new a_expression();
 					        a_unary.r = temp;
 					        a_unary.op = "-";
@@ -3128,24 +3456,24 @@ public class PiParser extends Parser {
 
 
 	// $ANTLR start "a_term"
-	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:560:1: a_term returns [a_term a_term] : ( NUMERIC | TRUE | FALSE | '(' a_Expr ')' | ID ( '[' op1= a_Expr ']' )* | '|' ID ( '[' op1= a_Expr ']' )* '|' | ( SORTED | PARTITIONED ) '(' ID ( '[' op1= a_Expr ']' )* ',' op2= a_Expr ',' op3= a_Expr ( ',' op4= a_Expr ',' op5= a_Expr )? ')' );
+	// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:561:1: a_term returns [a_term a_term] : ( NUMERIC | TRUE | FALSE | '(' a_Expr ')' | ID ( '[' op1= a_Expr ']' )* | '|' ID ( '[' op1= a_Expr ']' )* '|' | ( SORTED | PARTITIONED ) '(' ID ( '[' op1= a_Expr ']' )* ',' op2= a_Expr ',' op3= a_Expr ( ',' op4= a_Expr ',' op5= a_Expr )? ')' );
 	public final a_term a_term() throws RecognitionException {
 		a_term a_term = null;
 
 
-		Token NUMERIC40=null;
-		Token ID42=null;
+		Token NUMERIC41=null;
 		Token ID43=null;
 		Token ID44=null;
+		Token ID45=null;
 		a_expression op1 =null;
 		a_expression op2 =null;
 		a_expression op3 =null;
 		a_expression op4 =null;
 		a_expression op5 =null;
-		a_expression a_Expr41 =null;
+		a_expression a_Expr42 =null;
 
 		try {
-			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:560:31: ( NUMERIC | TRUE | FALSE | '(' a_Expr ')' | ID ( '[' op1= a_Expr ']' )* | '|' ID ( '[' op1= a_Expr ']' )* '|' | ( SORTED | PARTITIONED ) '(' ID ( '[' op1= a_Expr ']' )* ',' op2= a_Expr ',' op3= a_Expr ( ',' op4= a_Expr ',' op5= a_Expr )? ')' )
+			// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:561:31: ( NUMERIC | TRUE | FALSE | '(' a_Expr ')' | ID ( '[' op1= a_Expr ']' )* | '|' ID ( '[' op1= a_Expr ']' )* '|' | ( SORTED | PARTITIONED ) '(' ID ( '[' op1= a_Expr ']' )* ',' op2= a_Expr ',' op3= a_Expr ( ',' op4= a_Expr ',' op5= a_Expr )? ')' )
 			int alt53=7;
 			switch ( input.LA(1) ) {
 			case NUMERIC:
@@ -3191,44 +3519,44 @@ public class PiParser extends Parser {
 			}
 			switch (alt53) {
 				case 1 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:561:9: NUMERIC
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:562:9: NUMERIC
 					{
-					NUMERIC40=(Token)match(input,NUMERIC,FOLLOW_NUMERIC_in_a_term3596); 
-					 a_term = new a_num((NUMERIC40!=null?NUMERIC40.getText():null)); 
+					NUMERIC41=(Token)match(input,NUMERIC,FOLLOW_NUMERIC_in_a_term3596); 
+					 a_term = new a_num((NUMERIC41!=null?NUMERIC41.getText():null)); 
 					}
 					break;
 				case 2 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:563:7: TRUE
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:564:7: TRUE
 					{
 					match(input,TRUE,FOLLOW_TRUE_in_a_term3615); 
 					 a_term = new a_bool("true");
 					}
 					break;
 				case 3 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:565:7: FALSE
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:566:7: FALSE
 					{
 					match(input,FALSE,FOLLOW_FALSE_in_a_term3634); 
 					 a_term = new a_bool("false");
 					}
 					break;
 				case 4 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:567:7: '(' a_Expr ')'
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:568:7: '(' a_Expr ')'
 					{
 					match(input,39,FOLLOW_39_in_a_term3652); 
 					pushFollow(FOLLOW_a_Expr_in_a_term3653);
-					a_Expr41=a_Expr();
+					a_Expr42=a_Expr();
 					state._fsp--;
 
 					match(input,40,FOLLOW_40_in_a_term3654); 
-					 a_term = new a_expressionT(a_Expr41); 
+					 a_term = new a_expressionT(a_Expr42); 
 					}
 					break;
 				case 5 :
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:569:7: ID ( '[' op1= a_Expr ']' )*
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:570:7: ID ( '[' op1= a_Expr ']' )*
 					{
-					ID42=(Token)match(input,ID,FOLLOW_ID_in_a_term3672); 
-					 String name = (ID42!=null?ID42.getText():null); boolean isArrayElement=false; ArrayList<a_expression> index = null;
-					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:571:9: ( '[' op1= a_Expr ']' )*
+					ID43=(Token)match(input,ID,FOLLOW_ID_in_a_term3672); 
+					 String name = (ID43!=null?ID43.getText():null); boolean isArrayElement=false; ArrayList<a_expression> index = null;
+					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:572:9: ( '[' op1= a_Expr ']' )*
 					loop48:
 					while (true) {
 						int alt48=2;
@@ -3239,7 +3567,7 @@ public class PiParser extends Parser {
 
 						switch (alt48) {
 						case 1 :
-							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:571:10: '[' op1= a_Expr ']'
+							// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:572:10: '[' op1= a_Expr ']'
 							{
 							match(input,54,FOLLOW_54_in_a_term3694); 
 							pushFollow(FOLLOW_a_Expr_in_a_term3700);
@@ -3250,7 +3578,6 @@ public class PiParser extends Parser {
 							 if(!isArrayElement){
 							              isArrayElement = true;
 							              index = new ArrayList<a_expression>();
-							              System.out.println("has index");
 							             }
 							             index.add(op1);
 							          
@@ -3273,8 +3600,8 @@ public class PiParser extends Parser {
 					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:586:7: '|' ID ( '[' op1= a_Expr ']' )* '|'
 					{
 					match(input,57,FOLLOW_57_in_a_term3753); 
-					ID43=(Token)match(input,ID,FOLLOW_ID_in_a_term3755); 
-					 ArrayList<a_expression> inputs = new ArrayList<a_expression>();  String name = (ID43!=null?ID43.getText():null); boolean isArrayElement=false; ArrayList<a_expression> index = null;
+					ID44=(Token)match(input,ID,FOLLOW_ID_in_a_term3755); 
+					 ArrayList<a_expression> inputs = new ArrayList<a_expression>();  String name = (ID44!=null?ID44.getText():null); boolean isArrayElement=false; ArrayList<a_expression> index = null;
 					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:588:9: ( '[' op1= a_Expr ']' )*
 					loop49:
 					while (true) {
@@ -3362,8 +3689,8 @@ public class PiParser extends Parser {
 
 					 ArrayList<a_expression> inputs = new ArrayList<a_expression>(); 
 					match(input,39,FOLLOW_39_in_a_term3891); 
-					ID44=(Token)match(input,ID,FOLLOW_ID_in_a_term3902); 
-					 String name = (ID44!=null?ID44.getText():null); boolean isArrayElement=false; ArrayList<a_expression> index = null;
+					ID45=(Token)match(input,ID,FOLLOW_ID_in_a_term3902); 
+					 String name = (ID45!=null?ID45.getText():null); boolean isArrayElement=false; ArrayList<a_expression> index = null;
 					// /Users/yefang/Documents/research/frontEndGen/test1/src/grammar1/Pi.g:615:9: ( '[' op1= a_Expr ']' )*
 					loop51:
 					while (true) {
@@ -3469,73 +3796,6 @@ public class PiParser extends Parser {
 	// Delegated rules
 
 
-	protected DFA3 dfa3 = new DFA3(this);
-	static final String DFA3_eotS =
-		"\20\uffff";
-	static final String DFA3_eofS =
-		"\20\uffff";
-	static final String DFA3_minS =
-		"\1\7\1\5\4\22\5\uffff\1\67\1\47\1\67\2\22";
-	static final String DFA3_maxS =
-		"\1\65\1\36\2\66\2\22\5\uffff\1\67\1\61\1\67\2\66";
-	static final String DFA3_acceptS =
-		"\6\uffff\1\2\1\3\1\4\1\5\1\1\5\uffff";
-	static final String DFA3_specialS =
-		"\20\uffff}>";
-	static final String[] DFA3_transitionS = {
-			"\1\4\2\uffff\1\3\5\uffff\1\10\1\uffff\2\6\1\uffff\1\2\11\uffff\1\11\2"+
-			"\uffff\1\5\1\7\21\uffff\1\1",
-			"\1\6\27\uffff\2\12",
-			"\1\14\43\uffff\1\13",
-			"\1\14\43\uffff\1\15",
-			"\1\14",
-			"\1\14",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"\1\16",
-			"\1\12\6\uffff\1\6\2\uffff\1\6",
-			"\1\17",
-			"\1\14\43\uffff\1\13",
-			"\1\14\43\uffff\1\15"
-	};
-
-	static final short[] DFA3_eot = DFA.unpackEncodedString(DFA3_eotS);
-	static final short[] DFA3_eof = DFA.unpackEncodedString(DFA3_eofS);
-	static final char[] DFA3_min = DFA.unpackEncodedStringToUnsignedChars(DFA3_minS);
-	static final char[] DFA3_max = DFA.unpackEncodedStringToUnsignedChars(DFA3_maxS);
-	static final short[] DFA3_accept = DFA.unpackEncodedString(DFA3_acceptS);
-	static final short[] DFA3_special = DFA.unpackEncodedString(DFA3_specialS);
-	static final short[][] DFA3_transition;
-
-	static {
-		int numStates = DFA3_transitionS.length;
-		DFA3_transition = new short[numStates][];
-		for (int i=0; i<numStates; i++) {
-			DFA3_transition[i] = DFA.unpackEncodedString(DFA3_transitionS[i]);
-		}
-	}
-
-	protected class DFA3 extends DFA {
-
-		public DFA3(BaseRecognizer recognizer) {
-			this.recognizer = recognizer;
-			this.decisionNumber = 3;
-			this.eot = DFA3_eot;
-			this.eof = DFA3_eof;
-			this.min = DFA3_min;
-			this.max = DFA3_max;
-			this.accept = DFA3_accept;
-			this.special = DFA3_special;
-			this.transition = DFA3_transition;
-		}
-		@Override
-		public String getDescription() {
-			return "35:1: statement returns [statement statement] : ( defFunStatement | ( inContextAnnotation )? ( defVarStatement | assignStatement | ifStatement ) | whileStatement | forStatement | returnStatement );";
-		}
-	}
 
 	public static final BitSet FOLLOW_mainFunction_in_program55 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_defFunStatement_in_mainFunction84 = new BitSet(new long[]{0x0000000000000002L});
@@ -3679,10 +3939,10 @@ public class PiParser extends Parser {
 	public static final BitSet FOLLOW_ID_in_inputs2404 = new BitSet(new long[]{0x0000080000000002L});
 	public static final BitSet FOLLOW_INT_in_type2449 = new BitSet(new long[]{0x0040000000000002L});
 	public static final BitSet FOLLOW_54_in_type2454 = new BitSet(new long[]{0x0080000000000000L});
-	public static final BitSet FOLLOW_55_in_type2456 = new BitSet(new long[]{0x0040000000000002L});
+	public static final BitSet FOLLOW_55_in_type2456 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_DOUBLE_in_type2478 = new BitSet(new long[]{0x0040000000000002L});
 	public static final BitSet FOLLOW_54_in_type2483 = new BitSet(new long[]{0x0080000000000000L});
-	public static final BitSet FOLLOW_55_in_type2485 = new BitSet(new long[]{0x0040000000000002L});
+	public static final BitSet FOLLOW_55_in_type2485 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_BOOLEAN_in_type2507 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_VOID_in_type2526 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_53_in_preFunAnnotation2578 = new BitSet(new long[]{0x0000000040000000L});

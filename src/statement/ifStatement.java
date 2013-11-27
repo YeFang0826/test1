@@ -23,14 +23,13 @@ public class ifStatement extends statement{
 	// assume no loop inside ifStatement
 	public ArrayList<ArrayList<statement>> bp(HashMap<String, defFunStatement> functions){
 		
-		expression e1 = this.conditions.get(0);
+		expression e1 = new expression(this.conditions.get(0), "not");
 		expression e2;
 		for(int i=1; i<this.conditions.size(); i++){
-			e2 = new expression(e1,this.conditions.get(i), "and");
+			e2 = new expression(e1,new expression(this.conditions.get(i), "not"), "and");
 			e1 = e2;
 		}
-		e2 = new expression(e1, "not");
-		this.conditions.add(e2);
+		this.conditions.add(e1);
 		
 		
 		statement s;
@@ -119,7 +118,7 @@ public class ifStatement extends statement{
 								temppath = new ArrayList<statement>();
 								for(int k=0; k<path.size(); k++)
 									temppath.add(path.get(k));
-								temppath.add(new annotationStatement(((ud_FunctionCall)call).prepost_gen(f, false), "post"));
+								temppath.add(new assumeStatement(((ud_FunctionCall)call).prepost_gen(f, false)));
 								pathlist.add(temppath);
 							}
 							else{
@@ -136,7 +135,7 @@ public class ifStatement extends statement{
 										temppath = new ArrayList<statement>();
 										for(int m=0; m<pathlist.get(k).size(); m++)
 											temppath.add(pathlist.get(k).get(m));
-										temppath.add(new annotationStatement(((ud_FunctionCall)call).prepost_gen(f, false), "post"));
+										temppath.add(new assumeStatement(((ud_FunctionCall)call).prepost_gen(f, false)));
 										temppathlist.add(temppath);
 									}
 									else{

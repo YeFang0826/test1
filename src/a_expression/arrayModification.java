@@ -1,6 +1,9 @@
 package a_expression;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.microsoft.z3.*;
 
 import expression.expression;
 
@@ -41,6 +44,16 @@ public class arrayModification{
 					ret = ret +","+ this.index.get(i).tostring();
 		}
 		ret = ret + " = "+ this.newvalue.tostring()+">";
+		return ret;
+	}
+	public Expr to_smt(Context ctx, HashMap<String, Expr> symbolTable) throws Z3Exception{
+		Expr a = null;
+		if(symbolTable.containsKey(this.a)){
+			a = symbolTable.get(this.a);
+		}
+		Expr newValue = this.newvalue.to_smt(ctx, symbolTable);
+		Expr index = this.index.get(0).to_smt(ctx, symbolTable);
+		Expr ret = ctx.MkStore((ArrayExpr) a, index, newValue);
 		return ret;
 	}
 	
